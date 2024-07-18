@@ -38,14 +38,23 @@ const App = () => {
     'Core Value': 'Konten Core Value',
     'Struktur Organisasi': 'Konten Struktur Organisasi',
     'Profil Pejabat BPS': 'Konten Profil Pejabat BPS',
-    'Alamat dan Kontak BPS': 'Konten Alamat dan Kontak BPS'
+    'Alamat dan Kontak BPS': (
+    <p>
+        <b>Badan Pusat Statistik Kabupaten Sidoarjo</b><br></br>
+        Jl. Pahlawan 140, Lemahputro, Sidoarjo<br></br>
+        Telepon: (031) 8946473<br></br>
+        Email: bps3515@bps.go.id<br></br>
+        Website: sidoarjokab.bps.go.id
+    </p>
+    )
   };
 
   return (
     <>
       <h2 className="text-3xl font-bold mb-4 text-pdarkblue" style={{ marginTop: "5%" }}> Profil BPS</h2>
-      <div className="flex h-screen">
-        <div className="w-1/4 bg-white p-4 pl-0 border-r border-gray-300">
+      <p className="text-sm mb-5 from-neutral-600">Baca informasi terbaru seputar kegiatan dan layanan dari BPS Kabupaten Sidoarjo</p>
+      <div className="flex flex-col lg:flex-row h-screen lg:h-auto">
+        <div className="lg:w-1/4 bg-white p-4 pl-0 lg:border-r lg:border-gray-300">
           <ul>
             {menuItems.map(item => (
               <li
@@ -60,7 +69,7 @@ const App = () => {
             ))}
           </ul>
         </div>
-        <div className="w-3/4 p-4">
+        <div className="lg:w-3/4 p-4">
           <div className="flex justify-between items-center mb-4">
             <h2 className="text-xl text-pdarkblue font-bold mb-2">{selectedMenu}</h2>
             {/* Uncomment and customize the button as needed */}
