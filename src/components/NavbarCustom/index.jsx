@@ -32,7 +32,7 @@ export default function NavbarCustom() {
   };
 
   return (
-    <Navbar className='bg-base'>
+    <Navbar className='bg-base absolute'>
       <NavbarBrand>
         <img
           src="https://www.bps.go.id/_next/image?url=%2Fassets%2Flogo-bps.png&w=1080&q=75"
