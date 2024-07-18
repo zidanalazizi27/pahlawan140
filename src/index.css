@@ -1,3 +1,57 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@media (min-width: 1000px) {
+  nav header {
+    max-width: 80vw !important;
+    /* min-width: 800px !important; */
+  }
+}
+
+.swiper {
+  position: static !important;
+}
+
+.swiperWrapper {
+  position: relative !important;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  background-color: #0b588f;
+  /* padding: 5px; */
+  border-radius: 100%;
+  color: #ffffff;
+  width: 40px !important;
+  height: 40px !important;
+}
+
+.swiper-button-prev {
+  left: -15px !important;
+  margin-top: -10px;
+}
+
+.swiper-button-next {
+  right: -30px !important;
+  margin-top: -5px;
+}
+
+.swiper-button-prev::after {
+  margin-right: 3px;
+}
+
+.swiper-button-next::after {
+  margin-left: 5px;
+  margin-top: 2px;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  font-size: 18px !important;
+  font-weight: 800 !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: #0b588f !important;
+}
