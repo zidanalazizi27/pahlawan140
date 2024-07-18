@@ -73,7 +73,10 @@ const LayananSection = () => {
   ];
 
   return (
-    <>
+    <div className="flex flex-col my-10">
+        <h1 className="text-pdarkblue font-bold text-[20px] text-center mb-2">Layanan Kami</h1>
+        <p className="text-pdarkblue text-[18px] text-center mb-5 font-assistant">Layanan BPS Kabupaten Sidoarjo dalam Sketsa
+        Ragam Pelayanan Kami kepada anda dalam melaksanakan kegiatan statistik.</p>
       <div className="swiperWrapper">
         <Swiper
           cssMode={true}
@@ -82,7 +85,7 @@ const LayananSection = () => {
           mousewheel={true}
           keyboard={true}
           //   slidesPerView={3}
-          centeredSlides={true}
+        //   centeredSlides={true}
           autoplay={{
             delay: 5000,
             disableOnInteraction: false,
@@ -109,7 +112,7 @@ const LayananSection = () => {
           className=""
         >
           {cardsData.map((card, index) => (
-            <SwiperSlide key={index} className="my-10 px-[4%] 2xs:px-[100px] sm:px-0">
+            <SwiperSlide key={index} className="mb-12 px-[4%] 2xs:px-[100px] sm:px-0">
               <CardCustom
                 bgColor={card.bgColor}
                 iconColor={card.iconColor}
@@ -122,7 +125,7 @@ const LayananSection = () => {
           ))}
         </Swiper>
       </div>
-    </>
+    </div>
   );
 };
 
