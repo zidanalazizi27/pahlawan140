@@ -1,5 +1,6 @@
 import LayananSection from "../components/LayananSection";
 import NavbarCustom from "../components/NavbarCustom";
+import AplikasiLayanan from "../components/AplikasiLayanan";
 
 const Beranda = () => {
   return (
@@ -7,6 +8,7 @@ const Beranda = () => {
       <NavbarCustom />
       <div className="px-[10%]">
         <LayananSection />
+        <AplikasiLayanan />
       </div>
     </>
   );
