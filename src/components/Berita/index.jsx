@@ -105,20 +105,20 @@ const Berita = () => {
 
   return (
     <div className="my-12">
-      <div className="flex items-center justify-between mb-2">
-        <h1 className="text-[20px] font-bold text-pdarkblue font-inter">Kabar BPS 3515</h1>
-        <button className="px-4 py-2 text-white border rounded-full bg-pdarkblue border-pdarkblue text-[16px]">
+      <div className="flex items-center justify-between mb-1">
+        <h1 className="header">Kabar BPS 3515</h1>
+        <button className="px-4 py-2 text-white border rounded-full bg-pdarkblue border-pdarkblue text-[14px]">
           Selengkapnya
         </button>
       </div>
-      <p className="mb-5 text-[18px] text-pdarkblue font-assistant">
+      <p className="mb-7 sub-header">
         Baca informasi terbaru seputar kegiatan dan layanan dari BPS Kabupaten
         Sidoarjo
       </p>
       <div className="flex justify-start gap-4 mb-5 text-sm font-semibold">
         <button
           onClick={() => setSelectedCategory("berita")}
-          className={`px-4 py-2 rounded-full border ${
+          className={`text-[14px] px-4 py-2 rounded-full border ${
             selectedCategory === "berita"
               ? "bg-pdarkblue text-white"
               : "bg-white text-pdarkblue border-pdarkblue"
@@ -128,7 +128,7 @@ const Berita = () => {
         </button>
         <button
           onClick={() => setSelectedCategory("pengumuman")}
-          className={`px-4 py-2 rounded-full border ${
+          className={`text-[14px] px-4 py-2 rounded-full border ${
             selectedCategory === "pengumuman"
               ? "bg-pdarkblue text-white"
               : "bg-white text-pdarkblue border-pdarkblue"
@@ -138,7 +138,7 @@ const Berita = () => {
         </button>
         <button
           onClick={() => setSelectedCategory("youtube")}
-          className={`px-4 py-2 rounded-full border ${
+          className={`text-[14px] px-4 py-2 rounded-full border ${
             selectedCategory === "youtube"
               ? "bg-pdarkblue text-white"
               : "bg-white text-pdarkblue border-pdarkblue"
@@ -173,12 +173,12 @@ const Berita = () => {
                     </div>
                     <div className="absolute text-left text-white bottom-5 left-5 right-5">
                       <p
-                        className="mb-2 text-sm font-semibold"
+                        className="mb-2 text-[12px] font-semibold"
                         style={{ margin: "0 2.5%" }}
                       >
                         {item.title}
                       </p>
-                      <p className="text-xs" style={{ margin: "0 2.5%" }}>
+                      <p className="text-[10px]" style={{ margin: "0 2.5%" }}>
                         {item.date}
                       </p>
                     </div>
