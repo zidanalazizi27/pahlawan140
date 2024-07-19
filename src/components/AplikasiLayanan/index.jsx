@@ -31,8 +31,8 @@ export default function AplikasiLayanan() {
 
   return (
     <div>
-      <h1 className="font-bold font-inter text-[20px] text-pdarkblue mb-2 text-center">Aplikasi Pelayanan</h1>
-      <p className="font-assistant text-[18px] text-pdarkblue mb-5 text-center">Sistem yang memfasilitasi layanan BPS kepada publik</p>
+      <h1 className="mb-2 text-center header">Aplikasi Pelayanan</h1>
+      <p className="mb-5 text-center sub-header">Sistem yang memfasilitasi layanan BPS kepada publik</p>
       <br/>
       <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         {list.map((item, index) => (
@@ -49,8 +49,8 @@ export default function AplikasiLayanan() {
                 />
               </CardBody>
               <CardFooter className="block text-small">
-                <b className="font-bold font-inter text-[20px] text-pdarkblue text-left">{item.title}</b>
-                <p className="font-normal font-inter text-[15px] ml-2" style={{ color: '#5A5858', textAlign: 'justify', padding: '2%' }}>{item.desc}</p>
+                <b className="text-left title-card-lg">{item.title}</b>
+                <p className="ml-2 text-content-card" style={{ textAlign: 'justify', padding: '2%' }}>{item.desc}</p>
               </CardFooter>
             </Card>
           </a>

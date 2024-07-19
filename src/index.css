@@ -4,6 +4,7 @@
 
 :root, [data-theme] {
   background-color: #ffffff !important;
+  font-family: "Inter", sans-serif !important;
 }
 
 @media (min-width: 1000px) {
@@ -18,6 +19,10 @@
 .swiper {
   position: static !important;
 }
+
+/* .swiper-slide {
+  height: 100% !important;
+} */
 
 .swiperWrapper {
   position: relative !important;
@@ -65,4 +70,39 @@
 :where(.css-dev-only-do-not-override-p8b6i).ant-carousel .slick-prev::after, :where(.css-dev-only-do-not-override-p8b6i).ant-carousel .slick-next::after {
   width: 12px;
   height: 12px;
+}
+
+.header {
+  color: #0b588f !important;
+  font-family: "Inter", sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 20px !important;
+}
+
+.sub-header {
+  color: #0b588f !important;
+  font-family: "Assistant", sans-serif !important;
+  font-weight: 400 !important;
+  font-size: 18px !important;
+}
+
+.title-card {
+  color: #0b588f !important;
+  font-family: "Assistant", sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 12px !important;
+}
+
+.title-card-lg {
+  color: #0b588f !important;
+  font-family: "Assistant", sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 14px !important;
+}
+
+.text-content-card {
+  color: #5A5858 !important;
+  font-family: "Assistant", sans-serif !important;
+  font-weight: 400 !important;
+  font-size: 12px !important;
 }

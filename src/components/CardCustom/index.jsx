@@ -14,7 +14,7 @@ const CardCustom = ({ bgColor, iconColor, icon, title, description, link }) => {
               {title}
             </h2>
           </div>
-          <p className="text-[#5A5858] text-[12px] text-justify mb-4">
+          <p className="text-[#5A5858] text-[12px] text-justify mb-4 font-assistant">
             {description}
           </p>
         </div>

@@ -19,6 +19,8 @@ import {
   Keyboard,
   Autoplay,
 } from "swiper/modules";
+import { LuBookUp2 } from "react-icons/lu";
+import { TbHomeStats } from "react-icons/tb";
 
 const LayananSection = () => {
   // Definisikan array data untuk setiap card
@@ -35,7 +37,7 @@ const LayananSection = () => {
     {
       bgColor: "#00CC83",
       iconColor: "white",
-      icon: <BsDatabase className="text-[25px] text-white" />,
+      icon: <LuBookUp2 className="text-[25px] text-white" />,
       title: "Pojok Statistik",
       description:
         "Nikmati layanan potik Tempat Asyik Belajar Statistik Nikmati berbagai macam layanan menarik seperti videografis, infografis, kelas statistik dan masih banyak lagi untuk kamu nikmati hanya di Pojok Statistik BPS.",
@@ -44,7 +46,7 @@ const LayananSection = () => {
     {
       bgColor: "#26AAE1",
       iconColor: "white",
-      icon: <BsDatabase className="text-[25px] text-white" />,
+      icon: <TbHomeStats className="text-[25px] text-white" />,
       title: "Desa Cantik",
       description:
         "Program percepatan dari Badan Pusat Statistik dalam lingkup wilayah Desa/Kelurahan/Nagari/Wilayah setingkatnya untuk meningkatkan kompetensi aparatur Desa dalam mengelola dan memanfaatkan data Desa sehingga Perencanaan Pembangunan Desa menjadi lebih tepat sasaran.",
@@ -72,8 +74,8 @@ const LayananSection = () => {
 
   return (
     <div className="flex flex-col my-10">
-      <h1 className="text-pdarkblue font-bold text-[20px] text-center mb-2">Layanan Kami</h1>
-      <p className="text-pdarkblue text-[18px] text-center mb-5 font-assistant">Layanan BPS Kabupaten Sidoarjo dalam Sketsa Ragam Pelayanan Kami kepada anda dalam melaksanakan kegiatan statistik.</p>
+      <h1 className="mb-2 text-center header">Layanan Kami</h1>
+      <p className="mb-5 text-center sub-header">Layanan BPS Kabupaten Sidoarjo dalam Sketsa Ragam Pelayanan Kami kepada anda dalam melaksanakan kegiatan statistik.</p>
       <div className="swiperWrapper">
         <Swiper
           cssMode={true}
@@ -81,10 +83,10 @@ const LayananSection = () => {
           pagination={true}
           mousewheel={true}
           keyboard={true}
-          autoplay={{
-            delay: 5000,
-            disableOnInteraction: false,
-          }}
+          // autoplay={{
+          //   delay: 5000,
+          //   disableOnInteraction: false,
+          // }}
           breakpoints={{
             320: {
               slidesPerView: 1,
@@ -100,18 +102,18 @@ const LayananSection = () => {
             },
             1024: {
               slidesPerView: 3,
-              spaceBetween: 30,
+              spaceBetween: 0,
             },
             1280: {
               slidesPerView: 4,
-              spaceBetween: 30,
+              spaceBetween: 0,
             },
           }}
           modules={[Autoplay, Navigation, Pagination, Mousewheel, Keyboard]}
           className=""
         >
           {cardsData.map((card, index) => (
-            <SwiperSlide key={index} className="px-4 my-12">
+            <SwiperSlide key={index} className="lg:h-[270px] xl:h-[300px] 2xl:h-[270px] px-4 my-10">
               <CardCustom
                 bgColor={card.bgColor}
                 iconColor={card.iconColor}
