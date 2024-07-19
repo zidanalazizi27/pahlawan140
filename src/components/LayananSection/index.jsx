@@ -11,8 +11,6 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-// import "./styles.css";
-
 // import required modules
 import {
   Navigation,
@@ -73,7 +71,9 @@ const LayananSection = () => {
   ];
 
   return (
-    <>
+    <div className="flex flex-col my-10">
+      <h1 className="text-pdarkblue font-bold text-[20px] text-center mb-2">Layanan Kami</h1>
+      <p className="text-pdarkblue text-[18px] text-center mb-5 font-assistant">Layanan BPS Kabupaten Sidoarjo dalam Sketsa Ragam Pelayanan Kami kepada anda dalam melaksanakan kegiatan statistik.</p>
       <div className="swiperWrapper">
         <Swiper
           cssMode={true}
@@ -81,35 +81,37 @@ const LayananSection = () => {
           pagination={true}
           mousewheel={true}
           keyboard={true}
-          //   slidesPerView={3}
-          centeredSlides={true}
           autoplay={{
             delay: 5000,
             disableOnInteraction: false,
           }}
           breakpoints={{
-            250: {
+            320: {
               slidesPerView: 1,
-                spaceBetween: 20,
+              spaceBetween: 20,
             },
             640: {
               slidesPerView: 2,
-                spaceBetween: 0,
+              spaceBetween: 20,
             },
             768: {
-              slidesPerView: 3,
-              spaceBetween: -60
+              slidesPerView: 2,
+              spaceBetween: 20,
             },
-            // 1024: {
-            //   slidesPerView: 5,
-            //   spaceBetween: 50,
-            // },
+            1024: {
+              slidesPerView: 3,
+              spaceBetween: 30,
+            },
+            1280: {
+              slidesPerView: 4,
+              spaceBetween: 30,
+            },
           }}
           modules={[Autoplay, Navigation, Pagination, Mousewheel, Keyboard]}
           className=""
         >
           {cardsData.map((card, index) => (
-            <SwiperSlide key={index} className="my-10 px-[4%] 2xs:px-[100px] sm:px-0">
+            <SwiperSlide key={index} className="px-4 my-12">
               <CardCustom
                 bgColor={card.bgColor}
                 iconColor={card.iconColor}
@@ -122,7 +124,7 @@ const LayananSection = () => {
           ))}
         </Swiper>
       </div>
-    </>
+    </div>
   );
 };
 
