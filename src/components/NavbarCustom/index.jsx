@@ -52,7 +52,7 @@ export default function NavbarCustom() {
           </p>
         </NavbarBrand>
       </NavbarContent>
-      <NavbarContent className="hidden sm:flex gap-4" justify="end">
+      <NavbarContent className="hidden gap-4 sm:flex" justify="end">
         <NavbarItem className="hidden lg:flex">
           <Link
             href="#"

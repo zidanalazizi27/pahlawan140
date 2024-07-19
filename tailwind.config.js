@@ -34,5 +34,6 @@ module.exports = {
     },
   },
   darkMode: "class",
-  plugins: [nextui()],
+  plugins: [nextui()], 
+  plugins: [require('daisyui'),],
 };
