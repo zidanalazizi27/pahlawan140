@@ -1,16 +1,16 @@
 const CardCustom = ({ bgColor, iconColor, icon, title, description, link }) => {
   return (
-    <div className={`relative w-[220px] h-[320px] lg:w-[250px] lg:h-[290px] xl:w-[280px] xl:h-[270px] 2xl:w-[340px] 2xl:h-[230px] border-${bgColor}`}>
-      <div className="rounded-2xl w-full h-full overflow-hidden shadow-lg bg-white p-5 m-10 border-2 flex flex-col justify-between">
+    <div className="relative w-full h-full">
+      <div className="flex flex-col justify-between w-full h-full p-5 overflow-hidden bg-white rounded-2xl" style={{ boxShadow: `0 1px 4px rgba(0, 0, 0, 0.2)` }}>
         <div>
           <div className="flex items-center mb-4">
             <div
-              className={`w-[40px] h-[40px] rounded-2xl absolute -top-5 left-[30%] lg:left-[24%] xl:left-[20%] 2xl:left-[18%] z-5 flex justify-center items-center`}
+              className="w-[40px] h-[40px] rounded-2xl absolute -top-5 left-1/2 transform -translate-x-1/2 z-5 flex justify-center items-center"
               style={{ backgroundColor: bgColor }}
             >
               {icon}
             </div>
-            <h2 className="font-bold text-pdarkblue text-[12px] mt-2">
+            <h2 className="font-bold text-pdarkblue text-[12px] mt-2 text-center">
               {title}
             </h2>
           </div>

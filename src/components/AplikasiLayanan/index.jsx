@@ -1,10 +1,5 @@
 import React from "react";
-import {
-    Card, 
-    CardBody, 
-    CardFooter, 
-    Image
-} from "@nextui-org/react";
+import { Card, CardBody, CardFooter, Image } from "@nextui-org/react";
 
 export default function AplikasiLayanan() {
   const list = [
@@ -35,32 +30,31 @@ export default function AplikasiLayanan() {
   ];
 
   return (
-    
-    <div className="bg-base" style={{padding: '5% 10%', textAlign: 'center'}}>
-        <h1 className="font-extrabold font-inter text-[30px] text-pdarkblue ml-4">Aplikasi Pelayanan</h1>
-        <p className="font-normal font-assistant text-[22px] text-pdarkblue ml-3">Sistem yang memfasilitasi layanan BPS kepada publik</p><br/>
-        <div className="gap-5 grid grid-cols-3 sm:grid-cols-4">
-      {list.map((item, index) => (
-        <a key={index} href={item.link} target="_blank" rel="noopener noreferrer" className="card-link">
-        <Card shadow="md" key={index} isPressable onPress={() => console.log("item pressed")}>
-          <CardBody className="overflow-visible p-4">
-            <Image
-              shadow="md"
-              radius="md"
-              width="100%"
-              alt={item.title}
-              className="w-full object-cover h-full"
-              src={item.img}
-            />
-          </CardBody>
-          <CardFooter className="text-small block">
-            <b className="font-bold font-inter text-[20px] text-pdarkblue text-left">{item.title}</b>
-            <p className="font-normal font-inter text-[15px] ml-2" style={{ color: '#5A5858', textAlign: 'justify', padding: '2%' }}>{item.desc}</p>
-          </CardFooter>
-        </Card>
-        </a>
-      ))}
-      <span></span>
+    <div>
+      <h1 className="font-bold font-inter text-[20px] text-pdarkblue mb-2 text-center">Aplikasi Pelayanan</h1>
+      <p className="font-assistant text-[18px] text-pdarkblue mb-5 text-center">Sistem yang memfasilitasi layanan BPS kepada publik</p>
+      <br/>
+      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        {list.map((item, index) => (
+          <a key={index} href={item.link} target="_blank" rel="noopener noreferrer" className="card-link">
+            <Card shadow="md" isPressable onPress={() => console.log("item pressed")}>
+              <CardBody className="p-4 overflow-visible">
+                <Image
+                  shadow="md"
+                  radius="md"
+                  width="100%"
+                  alt={item.title}
+                  className="object-cover w-full h-full"
+                  src={item.img}
+                />
+              </CardBody>
+              <CardFooter className="block text-small">
+                <b className="font-bold font-inter text-[20px] text-pdarkblue text-left">{item.title}</b>
+                <p className="font-normal font-inter text-[15px] ml-2" style={{ color: '#5A5858', textAlign: 'justify', padding: '2%' }}>{item.desc}</p>
+              </CardFooter>
+            </Card>
+          </a>
+        ))}
       </div>
     </div>
   );
