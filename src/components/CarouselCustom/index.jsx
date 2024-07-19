@@ -11,30 +11,32 @@ const contentStyle = {
 };
 const imgStyle = {
   height: "100vh",
-  width: "auto",
-  display: "block",
-  marginLeft: "auto",
-  marginRight: "auto",
+  width: "100vw",
+  // display: "block",
+  // marginLeft: "auto",
+  // marginRight: "auto",
 };
 
 const CarouselCustom = () => (
   <>
     <Carousel
-      arrows infinite={true}
-      autoplay autoplaySpeed={2000}
+      arrows
+      infinite={true}
+      autoplay
+      autoplaySpeed={3000}
       className="overflow-hidden"
     >
       <div>
-        <img alt="C1" src="/image/C1.png" style={imgStyle} />
+        <img alt="C1" src="/image/C1b.png" style={imgStyle} />
       </div>
       <div>
-        <h3 style={contentStyle}>2</h3>
+        <img alt="C2" src="/image/C2.png" style={imgStyle} />
       </div>
       <div>
-        <h3 style={contentStyle}>3</h3>
+        <img alt="C3" src="/image/C3.png" style={imgStyle} />
       </div>
       <div>
-        <h3 style={contentStyle}>4</h3>
+        <img alt="C4" src="/image/C4.png" style={imgStyle} />
       </div>
     </Carousel>
   </>

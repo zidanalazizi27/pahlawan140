@@ -34,7 +34,7 @@ export default function NavbarCustom() {
   };
 
   return (
-    <Navbar className="bg-base">
+    <Navbar className="bg-base absolute">
       <NavbarContent>
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
