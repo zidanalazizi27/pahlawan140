@@ -140,7 +140,7 @@ export default function NavbarCustom() {
               <p className="font-semibold text-[14px] font-inter">Pengaduan</p>
             </DropdownItem>
             <DropdownItem className="font-bold" key="whitle">
-              <p className="font-semibold text-[14px] font-inter">Whitle Blowing System</p>
+              <p className="font-semibold text-[14px] font-inter">Whistle Blowing System</p>
             </DropdownItem>
             <DropdownItem className="font-bold" key="gratifikasi">
               <p className="font-semibold text-[14px] font-inter">Gratifikasi</p>
@@ -237,7 +237,7 @@ export default function NavbarCustom() {
               <p className="font-semibold text-[14px] font-inter">Pengaduan</p>
             </DropdownItem>
             <DropdownItem className="font-semibold text-[14px] font-inter" key="whitle">
-              <p className="font-semibold text-[14px] font-inter">Whitle Blowing System</p>
+              <p className="font-semibold text-[14px] font-inter">Whistle Blowing System</p>
             </DropdownItem>
             <DropdownItem className="font-semibold text-[14px] font-inter" key="gratifikasi">
               <p className="font-semibold text-[14px] font-inter">Gratifikasi</p>
