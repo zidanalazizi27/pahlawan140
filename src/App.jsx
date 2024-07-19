@@ -1,8 +1,12 @@
+import BackToTop from "./components/BackToTop";
 import Beranda from "./pages/beranda";
 
 function App() {
   return (
-    <Beranda />
+    <div className="flex flex-col">
+      <Beranda />
+      <BackToTop />
+    </div>
   );
 }
 

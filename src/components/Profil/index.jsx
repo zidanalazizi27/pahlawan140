@@ -15,10 +15,10 @@ const App = () => {
   ];
 
   const content = {
-    'Informasi Umum BPS': 'Konten Informasi Umum BPS',
+    'Informasi Umum BPS': '',
     'Visi dan Misi BPS': (
-      <div>
-        <p className="text-base text-justify text-slate-600">
+      <div className="text-[12px]">
+        <p className="text-justify text-slate-600">
           Dengan mempertimbangkan capaian kinerja, memperhatikan aspirasi masyarakat, potensi dan permasalahan, serta
           mewujudkan Visi Presiden dan Misi Presiden maka Visi Badan Pusat Statistik untuk tahun 2020-2024 adalah:
         </p>
@@ -36,11 +36,11 @@ const App = () => {
         </ul>
       </div>
     ),
-    'Core Value': 'Konten Core Value',
-    'Struktur Organisasi': 'Konten Struktur Organisasi',
-    'Profil Pejabat BPS': 'Konten Profil Pejabat BPS',
+    'Core Value': '',
+    'Struktur Organisasi': '',
+    'Profil Pejabat BPS': '',
     'Alamat dan Kontak BPS': (
-    <p>
+    <p className='text-[12px]'>
         <b>Badan Pusat Statistik Kabupaten Sidoarjo</b><br></br>
         Jl. Pahlawan 140, Lemahputro, Sidoarjo<br></br>
         Telepon: (031) 8946473<br></br>
@@ -61,7 +61,7 @@ const App = () => {
               <li
                 key={item}
                 onClick={() => setSelectedMenu(item)}
-                className={`p-2 mb-2 cursor-pointer rounded-md ${
+                className={`p-2 mb-2 cursor-pointer text-[12px] font-semibold rounded-md ${
                   selectedMenu === item ? 'bg-pdarkblue text-white' : 'bg-white text-pdarkblue'
                 }`}
               >
@@ -72,7 +72,7 @@ const App = () => {
         </div>
         <div className="p-4 lg:w-3/4">
           <div className="flex items-center justify-between mb-4">
-            <h2 className="mb-2 text-xl font-bold text-pdarkblue">{selectedMenu}</h2>
+            <h2 className="mb-2 text-[12px] font-bold text-pdarkblue">{selectedMenu}</h2>
             {/* Uncomment and customize the button as needed */}
             {/* <button className="px-4 py-2 text-white bg-blue-600 rounded-full">Selengkapnya</button> */}
           </div>

@@ -83,10 +83,10 @@ const LayananSection = () => {
           pagination={true}
           mousewheel={true}
           keyboard={true}
-          // autoplay={{
-          //   delay: 5000,
-          //   disableOnInteraction: false,
-          // }}
+          autoplay={{
+            delay: 5000,
+            disableOnInteraction: false,
+          }}
           breakpoints={{
             320: {
               slidesPerView: 1,

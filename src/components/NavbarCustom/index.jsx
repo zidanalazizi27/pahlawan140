@@ -17,7 +17,7 @@ import {
 import { ChevronDown } from "./Icon.jsx";
 
 export default function NavbarCustom() {
-  const [activeMenu, setActiveMenu] = useState("");
+  const [activeMenu, setActiveMenu] = useState("Beranda");
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const icons = {
     chevron: <ChevronDown fill="currentColor" size={16} />,
@@ -34,7 +34,7 @@ export default function NavbarCustom() {
   };
 
   return (
-    <Navbar className="bg-base absolute">
+    <Navbar className="absolute bg-base">
       <NavbarContent>
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}

@@ -1,3 +1,6 @@
+import React, { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import LayananSection from "../components/LayananSection";
 import NavbarCustom from "../components/NavbarCustom";
 import AplikasiLayanan from "../components/AplikasiLayanan";
@@ -7,15 +10,30 @@ import Berita from "../components/Berita";
 import Profil from "../components/Profil";
 
 const Beranda = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // animation duration in milliseconds
+      once: true, // whether animation should happen only once - while scrolling down
+    });
+  }, []);
+
   return (
     <>
       <NavbarCustom />
       <Carousel />
       <div className="px-[10%]">
-        <LayananSection />
-        <AplikasiLayanan />
-        <Berita />
-        <Profil />
+        <div data-aos="fade-up">
+          <LayananSection />
+        </div>
+        <div data-aos="fade-up" data-aos-delay="100">
+          <AplikasiLayanan />
+        </div>
+        <div data-aos="fade-up" data-aos-delay="200">
+          <Berita />
+        </div>
+        <div data-aos="fade-up" data-aos-delay="300">
+          <Profil />
+        </div>
       </div>
       <Footer />
     </>
