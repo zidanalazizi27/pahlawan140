@@ -27,7 +27,7 @@ const CarouselCustom = () => (
       className="overflow-hidden"
     >
       <div>
-        <img alt="C1" src="/image/C1.png" style={imgStyle} />
+        <img alt="C1" src="/image/C1b.png" style={imgStyle} />
       </div>
       <div>
         <img alt="C2" src="/image/C2.png" style={imgStyle} />
