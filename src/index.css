@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+:root, [data-theme] {
+  background-color: #ffffff !important;
+}
+
 @media (min-width: 1000px) {
   nav header {
     max-width: 80vw !important;

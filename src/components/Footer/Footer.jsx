@@ -55,9 +55,9 @@ export default function Footer() {
   return (
     <footer
       id="footer"
-      className="relative bg-base text-pdarkblue md:h-60 flex md:flex-around flex-col md:flex-row overflow-hidden md:items-center p-5 md:p-0"
+      className="relative flex flex-col p-5 mt-10 overflow-hidden bg-base text-pdarkblue md:h-60 md:flex-around md:flex-row md:items-center md:p-0"
     >
-      <div className="flex flex-col justify-center items-center md:w-4/12 mb-5 md:my-0">
+      <div className="flex flex-col items-center justify-center mb-5 md:w-4/12 md:my-0">
         <div className="flex items-center">
           <img alt="logo" src="/image/logo.png" width={120} height={120} />
 
@@ -72,13 +72,13 @@ export default function Footer() {
           </p>
         </div>
 
-        <p className="whitespace-pre-wrap w-42 md:text-left ml-6 text-lg text-pdarkblue mt-5 z-40">
+        <p className="z-40 mt-5 ml-6 text-lg whitespace-pre-wrap w-42 md:text-left text-pdarkblue">
           <b>
             <span className="mr-2">&#169;</span>BPS Sidoarjo 2024
           </b>
         </p>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:w-9/12 mx-auto">
+      <div className="grid grid-cols-1 gap-10 mx-auto md:grid-cols-2 md:w-9/12">
         <div>
           <FooterTitle title="Media Sosial" />
           <FooterList items={medSos} />
@@ -89,11 +89,11 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="hidden md:block absolute right-0 bottom-0">
+      <div className="absolute bottom-0 right-0 hidden md:block">
         <img src="/image/pattern.png" width={140} height={140} />
       </div>
 
-      <div className="hidden md:block absolute left-0 bottom-0">
+      <div className="absolute bottom-0 left-0 hidden md:block">
         <img
           src="/image/pattern.png"
           width={140}

@@ -8,12 +8,12 @@ const Beranda = () => {
   return (
     <>
       <NavbarCustom />
-      <div className="px-[10%]">
       <Carousel />
+      <div className="px-[10%]">
         <LayananSection />
         <AplikasiLayanan />
-        <Footer />
       </div>
+      <Footer />
     </>
   );
 };

@@ -33,7 +33,6 @@ module.exports = {
       },
     },
   },
-  darkMode: "class",
-  plugins: [nextui()], 
-  plugins: [require('daisyui'),],
+  // darkMode: "class",
+  plugins: [nextui(), require('daisyui')], 
 };
