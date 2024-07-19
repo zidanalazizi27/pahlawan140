@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import React, { useState } from 'react';
 import 'tailwindcss/tailwind.css';
 
@@ -17,17 +18,17 @@ const App = () => {
     'Informasi Umum BPS': 'Konten Informasi Umum BPS',
     'Visi dan Misi BPS': (
       <div>
-        <p className="text-slate-600 text-base text-justify">
+        <p className="text-base text-justify text-slate-600">
           Dengan mempertimbangkan capaian kinerja, memperhatikan aspirasi masyarakat, potensi dan permasalahan, serta
           mewujudkan Visi Presiden dan Misi Presiden maka Visi Badan Pusat Statistik untuk tahun 2020-2024 adalah:
         </p>
-        <p className='text-center font-bold'>"Penyedia Data Statistik Berkualitas untuk Indonesia Maju" <br></br>
+        <p className='font-bold text-center'>"Penyedia Data Statistik Berkualitas untuk Indonesia Maju" <br></br>
         <div className='italic font-medium'>(Provider of Qualified Statistical Data for Advanced Indonesia)</div>
         </p>
         <p className='text-slate-600'>
         Misi:            
         </p>
-        <ul className="text-slate-600 list-disc list-inside mt-2">
+        <ul className="mt-2 list-disc list-inside text-slate-600">
           <li>Menyediakan statistik berkualitas yang berstandar nasional dan internasional</li>
           <li>Memenuhi KLN (Kebutuhan Layanan Nasional) melalui Sistem Statistik Nasional yang berkesinambungan</li>
           <li>Mewujudkan pelayanan prima di bidang statistik untuk terwujudnya Sistem Statistik Nasional</li>
@@ -51,10 +52,10 @@ const App = () => {
 
   return (
     <>
-      <h2 className="text-3xl font-bold mb-4 text-pdarkblue" style={{ marginTop: "5%" }}> Profil BPS</h2>
-      <p className="text-sm mb-5 from-neutral-600">Baca informasi terbaru seputar kegiatan dan layanan dari BPS Kabupaten Sidoarjo</p>
-      <div className="flex flex-col lg:flex-row h-screen lg:h-auto">
-        <div className="lg:w-1/4 bg-white p-4 pl-0 lg:border-r lg:border-gray-300">
+      <h2 className="mb-2 font-bold text-[20px] text-pdarkblue font-inter text-center" style={{ marginTop: "5%" }}> Profil BPS</h2>
+      <p className="mb-8 text-[18px] text-pdarkblue font-assistant text-center">Baca informasi terbaru seputar kegiatan dan layanan dari BPS Kabupaten Sidoarjo</p>
+      <div className="flex flex-col h-screen lg:flex-row lg:h-auto">
+        <div className="p-4 pl-0 bg-white lg:w-1/4 lg:border-r lg:border-gray-300">
           <ul>
             {menuItems.map(item => (
               <li
@@ -69,11 +70,11 @@ const App = () => {
             ))}
           </ul>
         </div>
-        <div className="lg:w-3/4 p-4">
-          <div className="flex justify-between items-center mb-4">
-            <h2 className="text-xl text-pdarkblue font-bold mb-2">{selectedMenu}</h2>
+        <div className="p-4 lg:w-3/4">
+          <div className="flex items-center justify-between mb-4">
+            <h2 className="mb-2 text-xl font-bold text-pdarkblue">{selectedMenu}</h2>
             {/* Uncomment and customize the button as needed */}
-            {/* <button className="px-4 py-2 bg-blue-600 text-white rounded-full">Selengkapnya</button> */}
+            {/* <button className="px-4 py-2 text-white bg-blue-600 rounded-full">Selengkapnya</button> */}
           </div>
           <div>{content[selectedMenu]}</div>
         </div>
