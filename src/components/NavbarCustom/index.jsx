@@ -48,7 +48,8 @@ export default function NavbarCustom() {
             height={48}
           />
           <p className="font-[800] font-inter italic text-[14px] sm:text-[18px] text-pdarkblue ml-3 block xs:inline-block">
-            BPS KABUPATEN <br className="xs:hidden" />SIDOARJO
+            BPS KABUPATEN <br className="xs:hidden" />
+            SIDOARJO
           </p>
         </NavbarBrand>
       </NavbarContent>
@@ -69,6 +70,24 @@ export default function NavbarCustom() {
             onClick={() => handleMenuClick("MyOffice")}
           >
             MyOffice
+          </Link>
+        </NavbarItem>
+        <NavbarItem className="hidden lg:flex">
+          <Link
+            href="#"
+            className={getMenuClasses("Teman Luki")}
+            onClick={() => handleMenuClick("Teman Luki")}
+          >
+            Teman Luki
+          </Link>
+        </NavbarItem>
+        <NavbarItem className="hidden lg:flex">
+          <Link
+            href="#"
+            className={getMenuClasses("Ruang Baca")}
+            onClick={() => handleMenuClick("Ruang Baca")}
+          >
+            Ruang Baca
           </Link>
         </NavbarItem>
         <NavbarItem className="hidden lg:flex">
@@ -105,10 +124,14 @@ export default function NavbarCustom() {
             }}
           >
             <DropdownItem className="font-bold" key="daftarmitra">
-              <p className="font-semibold text-[14px] font-inter">Daftar Mitra 2024</p>
+              <p className="font-semibold text-[14px] font-inter">
+                Daftar Mitra 2024
+              </p>
             </DropdownItem>
             <DropdownItem className="font-bold" key="sobat">
-              <p className="font-semibold text-[14px] font-inter">Aplikasi Sobat</p>
+              <p className="font-semibold text-[14px] font-inter">
+                Aplikasi Sobat
+              </p>
             </DropdownItem>
           </DropdownMenu>
         </Dropdown>
@@ -140,17 +163,21 @@ export default function NavbarCustom() {
               <p className="font-semibold text-[14px] font-inter">Pengaduan</p>
             </DropdownItem>
             <DropdownItem className="font-bold" key="whitle">
-              <p className="font-semibold text-[14px] font-inter">Whistle Blowing System</p>
+              <p className="font-semibold text-[14px] font-inter">
+                Whistle Blowing System
+              </p>
             </DropdownItem>
             <DropdownItem className="font-bold" key="gratifikasi">
-              <p className="font-semibold text-[14px] font-inter">Gratifikasi</p>
+              <p className="font-semibold text-[14px] font-inter">
+                Gratifikasi
+              </p>
             </DropdownItem>
           </DropdownMenu>
         </Dropdown>
       </NavbarContent>
 
       <NavbarMenu>
-      <NavbarMenuItem className="lg:flex">
+        <NavbarMenuItem className="lg:flex">
           <Link
             href="#"
             className={getMenuClasses("Beranda")}
@@ -166,6 +193,24 @@ export default function NavbarCustom() {
             onClick={() => handleMenuClick("MyOffice")}
           >
             MyOffice
+          </Link>
+        </NavbarMenuItem>
+        <NavbarMenuItem className="lg:flex">
+          <Link
+            href="#"
+            className={getMenuClasses("Teman Luki")}
+            onClick={() => handleMenuClick("Teman Luki")}
+          >
+            Teman Luki
+          </Link>
+        </NavbarMenuItem>
+        <NavbarMenuItem className="lg:flex">
+          <Link
+            href="#"
+            className={getMenuClasses("Ruang Baca")}
+            onClick={() => handleMenuClick("Ruang Baca")}
+          >
+            Ruang Baca
           </Link>
         </NavbarMenuItem>
         <NavbarMenuItem className="lg:flex">
@@ -202,10 +247,17 @@ export default function NavbarCustom() {
             }}
           >
             <DropdownItem className="font-bold" key="daftarmitra">
-              <p className="font-semibold text-[14px] font-inter">Daftar Mitra 2024</p>
+              <p className="font-semibold text-[14px] font-inter">
+                Daftar Mitra 2024
+              </p>
             </DropdownItem>
-            <DropdownItem className="font-semibold text-[14px] font-inter" key="sobat">
-              <p className="font-semibold text-[14px] font-inter">Aplikasi Sobat</p>
+            <DropdownItem
+              className="font-semibold text-[14px] font-inter"
+              key="sobat"
+            >
+              <p className="font-semibold text-[14px] font-inter">
+                Aplikasi Sobat
+              </p>
             </DropdownItem>
           </DropdownMenu>
         </Dropdown>
@@ -236,11 +288,21 @@ export default function NavbarCustom() {
             <DropdownItem className="font-bold" key="pengaduan">
               <p className="font-semibold text-[14px] font-inter">Pengaduan</p>
             </DropdownItem>
-            <DropdownItem className="font-semibold text-[14px] font-inter" key="whitle">
-              <p className="font-semibold text-[14px] font-inter">Whistle Blowing System</p>
+            <DropdownItem
+              className="font-semibold text-[14px] font-inter"
+              key="whitle"
+            >
+              <p className="font-semibold text-[14px] font-inter">
+                Whistle Blowing System
+              </p>
             </DropdownItem>
-            <DropdownItem className="font-semibold text-[14px] font-inter" key="gratifikasi">
-              <p className="font-semibold text-[14px] font-inter">Gratifikasi</p>
+            <DropdownItem
+              className="font-semibold text-[14px] font-inter"
+              key="gratifikasi"
+            >
+              <p className="font-semibold text-[14px] font-inter">
+                Gratifikasi
+              </p>
             </DropdownItem>
           </DropdownMenu>
         </Dropdown>

@@ -66,10 +66,7 @@ const data = {
   ],
   youtube: [
     {
-      id: 1,
-      title: "YouTube Video 1",
-      date: "13 Jul 2024",
-      imageUrl: "https://nextui.org/images/card-example-2.jpeg",
+      url: "https://youtu.be/ZL2pSOvmNDU",
     },
   ],
 };

@@ -68,14 +68,17 @@ const LayananSection = () => {
       title: "Cari Data",
       description:
         " Layanan BPS yang memungkinkan pengguna untuk mengajukan permintaan data statistik melalui formulir online, memfasilitasi akses cepat dan tepat terhadap informasi terbaru.",
-      link: "#",
+      link: "https://sidoarjokab.bps.go.id/pencarian.html?",
     },
   ];
 
   return (
     <div className="flex flex-col my-10">
       <h1 className="mb-2 text-center header">Layanan Kami</h1>
-      <p className="mb-5 text-center sub-header">Layanan BPS Kabupaten Sidoarjo dalam Sketsa Ragam Pelayanan Kami kepada anda dalam melaksanakan kegiatan statistik.</p>
+      <p className="mb-5 text-center sub-header">
+        Layanan BPS Kabupaten Sidoarjo dalam Sketsa Ragam Pelayanan Kami kepada
+        anda dalam melaksanakan kegiatan statistik.
+      </p>
       <div className="swiperWrapper">
         <Swiper
           cssMode={true}
@@ -113,7 +116,10 @@ const LayananSection = () => {
           className=""
         >
           {cardsData.map((card, index) => (
-            <SwiperSlide key={index} className="lg:h-[270px] xl:h-[300px] 2xl:h-[270px] px-4 my-10">
+            <SwiperSlide
+              key={index}
+              className="lg:h-[270px] xl:h-[300px] 2xl:h-[270px] px-4 my-10"
+            >
               <CardCustom
                 bgColor={card.bgColor}
                 iconColor={card.iconColor}
