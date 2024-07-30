@@ -65,7 +65,7 @@ export default function NavbarCustom() {
         </NavbarItem>
         <NavbarItem className="hidden lg:flex">
           <Link
-            href="#"
+            href="/myoffice"
             className={getMenuClasses("MyOffice")}
             onClick={() => handleMenuClick("MyOffice")}
           >
@@ -188,7 +188,7 @@ export default function NavbarCustom() {
         </NavbarMenuItem>
         <NavbarMenuItem className="lg:flex">
           <Link
-            href="#"
+            href="/myoffice"
             className={getMenuClasses("MyOffice")}
             onClick={() => handleMenuClick("MyOffice")}
           >
