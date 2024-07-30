@@ -19,18 +19,18 @@ import {
 const medSos = [
   {
     icon: FacebookOutlined,
-    href: "",
-    text: "BPS 3515",
+    href: "https://id-id.facebook.com/statistik.sidoarjo/",
+    text: "statistik.sidoarjo",
   },
   {
     icon: Instagram,
-    href: "",
+    href: "https://www.instagram.com/bps.sidoarjo/",
     text: "@bps.sidoarjo",
   },
   {
-    icon: YouTube,
-    href: "",
-    text: "@BPS3515",
+    icon: X,
+    href: "https://x.com/bpskabsidoarjo",
+    text: "@bpskabsidoarjo",
   },
 ];
 
@@ -42,7 +42,8 @@ const contacts = [
   },
   {
     icon: Call,
-    text: "(031)8941744",
+    href: "https://api.whatsapp.com/send?phone=6285890003515",
+    text: "085890003515",
   },
   {
     icon: Email,
@@ -58,19 +59,25 @@ export default function Footer() {
       className="relative flex flex-col p-5 mt-10 overflow-hidden bg-base text-pdarkblue md:h-60 md:flex-around md:flex-row md:items-center md:p-0"
     >
       <div className="flex flex-col items-center justify-center mb-5 md:w-4/12 md:my-0">
-        <div className="flex items-center">
-          <img alt="logo" src="/image/logo.png" width={120} height={120} />
+        <a
+          href="https://sidoarjokab.bps.go.id/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div className="flex items-center cursor-pointer">
+            <img alt="logo" src="/image/logo.png" width={120} height={120} />
 
-          {/* Divider here */}
-          <div className="w-[6px] rounded-full h-24 bg-pdarkblue mx-4"></div>
+            {/* Divider here */}
+            <div className="w-[6px] rounded-full h-24 bg-pdarkblue mx-4"></div>
 
-          <p className="block text-2xl">
-            <b>BPS</b> <span className="block">Kabupaten</span>{" "}
-            <span className="block">
-              <b>Sidoarjo</b>
-            </span>
-          </p>
-        </div>
+            <p className="block text-2xl">
+              <b>BPS</b> <span className="block">Kabupaten</span>{" "}
+              <span className="block">
+                <b>Sidoarjo</b>
+              </span>
+            </p>
+          </div>
+        </a>
 
         <p className="z-40 mt-5 ml-6 text-lg whitespace-pre-wrap w-42 md:text-left text-pdarkblue">
           <b>
