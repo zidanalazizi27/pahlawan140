@@ -56,7 +56,7 @@ export default function NavbarCustom() {
       <NavbarContent className="hidden gap-4 sm:flex" justify="end">
         <NavbarItem className="hidden lg:flex">
           <Link
-            href="#"
+            href="/"
             className={getMenuClasses("Beranda")}
             onClick={() => handleMenuClick("Beranda")}
           >
@@ -179,7 +179,7 @@ export default function NavbarCustom() {
       <NavbarMenu>
         <NavbarMenuItem className="lg:flex">
           <Link
-            href="#"
+            href="/"
             className={getMenuClasses("Beranda")}
             onClick={() => handleMenuClick("Beranda")}
           >
