@@ -3,6 +3,7 @@ import BackToTop from "./components/BackToTop";
 import Beranda from "./pages/beranda";
 import MyOffice from "./pages/myoffice";
 import AyoMagang from "./pages/ayomagang";
+import RuangBaca from "./pages/ruangbaca";
 import { NextUIProvider } from "@nextui-org/react";
 
 function App() {
@@ -10,40 +11,27 @@ function App() {
 
   return (
     <NextUIProvider navigate={navigate}>
+    <div classname="flex flex-col w-full">
       <Routes>
         <Route
           path="/"
-          element={
-            <>
-              <Beranda />
-              <BackToTop />
-            </>
-          }
+          element={ <Beranda /> }
         />
         <Route
           path="/myoffice"
-          element={
-            <>
-              <MyOffice />
-              <BackToTop />
-            </>
-          }
+          element={ <MyOffice />}
         />
       <Route
           path="/ayomagang"
-          element={
-            <>
-              <AyoMagang />
-              <BackToTop />
-            </>
-          }
-        />
+          element={ <AyoMagang />}
+      />
+      <Route
+          path="/ruangbaca"
+          element={<RuangBaca />}
+      />
       </Routes>
-      {/* <div className="flex flex-col">
-        <Beranda />
-        <MyOffice />
-        <BackToTop />
-      </div> */}
+      <BackToTop />
+      <div>
     </NextUIProvider>
   );
 }
