@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Navbar,
   NavbarBrand,
@@ -15,17 +15,26 @@ import {
   NavbarMenuItem,
 } from "@nextui-org/react";
 import { ChevronDown } from "./Icon.jsx";
+import { useLocation, Link as RouterLink } from "react-router-dom";
 
 export default function NavbarCustom() {
-  const [activeMenu, setActiveMenu] = useState("Beranda");
-  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const location = useLocation();
+  const [activeMenu, setActiveMenu] = useState(location.pathname);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const icons = {
     chevron: <ChevronDown fill="currentColor" size={16} />,
   };
 
-  const handleMenuClick = (menu) => {
-    setActiveMenu(menu);
-  };
+  useEffect(() => {
+    const path = location.pathname;
+    if (path === "/") setActiveMenu("Beranda");
+    else if (path === "/myoffice") setActiveMenu("MyOffice");
+    else if (path === "/temanluki") setActiveMenu("Teman Luki");
+    else if (path === "/ruangbaca") setActiveMenu("Ruang Baca");
+    else if (path === "/zi-rb") setActiveMenu("ZI-RB");
+    else if (path.startsWith("/mitraqita")) setActiveMenu("MitraQita");
+    else if (path.startsWith("/aduan")) setActiveMenu("Aduan");
+  }, [location]);
 
   const getMenuClasses = (menu) => {
     return activeMenu === menu
@@ -55,49 +64,44 @@ export default function NavbarCustom() {
       </NavbarContent>
       <NavbarContent className="hidden gap-4 sm:flex" justify="end">
         <NavbarItem className="hidden lg:flex">
-          <Link
-            href="/"
+          <RouterLink
+            to="/"
             className={getMenuClasses("Beranda")}
-            onClick={() => handleMenuClick("Beranda")}
           >
             Beranda
-          </Link>
+          </RouterLink>
         </NavbarItem>
         <NavbarItem className="hidden lg:flex">
-          <Link
-            href="/myoffice"
+          <RouterLink
+            to="/myoffice"
             className={getMenuClasses("MyOffice")}
-            onClick={() => handleMenuClick("MyOffice")}
           >
             MyOffice
-          </Link>
+          </RouterLink>
         </NavbarItem>
         <NavbarItem className="hidden lg:flex">
-          <Link
-            href="#"
+          <RouterLink
+            to="/temanluki"
             className={getMenuClasses("Teman Luki")}
-            onClick={() => handleMenuClick("Teman Luki")}
           >
             Teman Luki
-          </Link>
+          </RouterLink>
         </NavbarItem>
         <NavbarItem className="hidden lg:flex">
-          <Link
-            href="#"
+          <RouterLink
+            to="/ruangbaca"
             className={getMenuClasses("Ruang Baca")}
-            onClick={() => handleMenuClick("Ruang Baca")}
           >
             Ruang Baca
-          </Link>
+          </RouterLink>
         </NavbarItem>
         <NavbarItem className="hidden lg:flex">
-          <Link
-            href="#"
+          <RouterLink
+            to="/zi-rb"
             className={getMenuClasses("ZI-RB")}
-            onClick={() => handleMenuClick("ZI-RB")}
           >
             ZI-RB
-          </Link>
+          </RouterLink>
         </NavbarItem>
         <Dropdown>
           <NavbarItem>
@@ -178,49 +182,44 @@ export default function NavbarCustom() {
 
       <NavbarMenu>
         <NavbarMenuItem className="lg:flex">
-          <Link
-            href="/"
+          <RouterLink
+            to="/"
             className={getMenuClasses("Beranda")}
-            onClick={() => handleMenuClick("Beranda")}
           >
             Beranda
-          </Link>
+          </RouterLink>
         </NavbarMenuItem>
         <NavbarMenuItem className="lg:flex">
-          <Link
-            href="/myoffice"
+          <RouterLink
+            to="/myoffice"
             className={getMenuClasses("MyOffice")}
-            onClick={() => handleMenuClick("MyOffice")}
           >
             MyOffice
-          </Link>
+          </RouterLink>
         </NavbarMenuItem>
         <NavbarMenuItem className="lg:flex">
-          <Link
-            href="#"
+          <RouterLink
+            to="/temanluki"
             className={getMenuClasses("Teman Luki")}
-            onClick={() => handleMenuClick("Teman Luki")}
           >
             Teman Luki
-          </Link>
+          </RouterLink>
         </NavbarMenuItem>
         <NavbarMenuItem className="lg:flex">
-          <Link
-            href="#"
+          <RouterLink
+            to="/ruangbaca"
             className={getMenuClasses("Ruang Baca")}
-            onClick={() => handleMenuClick("Ruang Baca")}
           >
             Ruang Baca
-          </Link>
+          </RouterLink>
         </NavbarMenuItem>
         <NavbarMenuItem className="lg:flex">
-          <Link
-            href="#"
+          <RouterLink
+            to="/zi-rb"
             className={getMenuClasses("ZI-RB")}
-            onClick={() => handleMenuClick("ZI-RB")}
           >
             ZI-RB
-          </Link>
+          </RouterLink>
         </NavbarMenuItem>
         <Dropdown>
           <NavbarMenuItem>
