@@ -2,6 +2,7 @@ import { Route, Routes, useNavigate } from "react-router-dom";
 import BackToTop from "./components/BackToTop";
 import Beranda from "./pages/beranda";
 import MyOffice from "./pages/myoffice";
+import RuangBaca from "./pages/ruangbaca";
 import { NextUIProvider } from "@nextui-org/react";
 
 function App() {
@@ -28,12 +29,16 @@ function App() {
             </>
           }
         />
+        <Route
+          path="/ruangbaca"
+          element={
+            <>
+              <RuangBaca />
+              <BackToTop />
+            </>
+          }
+        />
       </Routes>
-      {/* <div className="flex flex-col">
-        <Beranda />
-        <MyOffice />
-        <BackToTop />
-      </div> */}
     </NextUIProvider>
   );
 }

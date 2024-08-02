@@ -2,13 +2,10 @@ import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import NavbarCustom from "../components/NavbarCustom";
-import Office from "../components/Office";
-import Office2 from "../components/Office2";
-import Office3 from "../components/Office3";
+import RuangBaca from "../components/RuangBaca";
 import Footer from "../components/Footer/Footer";
 
-
-const MyOffice = () => {
+const RB = () => {
   useEffect(() => {
     AOS.init({
       duration: 1000, // animation duration in milliseconds
@@ -21,13 +18,7 @@ const MyOffice = () => {
       <NavbarCustom />
       <div className="px-[10%]">
         <div data-aos="fade-up">
-          <Office />
-        </div>
-        <div data-aos="fade-up">
-          <Office2 />
-        </div>
-        <div data-aos="fade-up">
-          <Office3 />
+          <RuangBaca />
         </div>
       </div>
       <Footer />
@@ -35,4 +26,4 @@ const MyOffice = () => {
   );
 };
 
-export default MyOffice;
+export default RB;
