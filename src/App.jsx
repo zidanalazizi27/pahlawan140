@@ -2,6 +2,7 @@ import { Route, Routes, useNavigate } from "react-router-dom";
 import BackToTop from "./components/BackToTop";
 import Beranda from "./pages/beranda";
 import MyOffice from "./pages/myoffice";
+import AyoMagang from "./pages/ayomagang";
 import { NextUIProvider } from "@nextui-org/react";
 
 function App() {
@@ -24,6 +25,15 @@ function App() {
           element={
             <>
               <MyOffice />
+              <BackToTop />
+            </>
+          }
+        />
+      <Route
+          path="/ayomagang"
+          element={
+            <>
+              <AyoMagang />
               <BackToTop />
             </>
           }
