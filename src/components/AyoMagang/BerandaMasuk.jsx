@@ -33,8 +33,8 @@ const Beranda = () => {
               fontFamily: 'Inter, sans-serif',
             }}
           >
-            <Link to="/daftaram" style={{ color: 'inherit', textDecoration: 'none' }}>
-              Daftar Akun Magang
+            <Link to="/formulir" style={{ color: 'inherit', textDecoration: 'none' }}>
+              Daftar Magang
             </Link>
           </Button>
         </div>
