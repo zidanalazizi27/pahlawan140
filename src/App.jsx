@@ -3,6 +3,9 @@ import BackToTop from "./components/BackToTop";
 import Beranda from "./pages/beranda";
 import MyOffice from "./pages/myoffice";
 import RuangBaca from "./pages/ruangbaca";
+import TemanLuki from "./pages/temanluki";
+import Aduan from "./pages/aduan";
+import Login from './pages/login';
 import { NextUIProvider } from "@nextui-org/react";
 
 function App() {
@@ -35,6 +38,32 @@ function App() {
             <>
               <RuangBaca />
               <BackToTop />
+            </>
+          }
+        />
+        <Route
+          path="/temanluki"
+          element={
+            <>
+              <TemanLuki />
+              <BackToTop />
+            </>
+          }
+        />
+        <Route
+          path="/aduan"
+          element={
+            <>
+              <Aduan />
+              <BackToTop />
+            </>
+          }
+        />
+        <Route
+          path="/login"
+          element={
+            <>
+              <Login />
             </>
           }
         />

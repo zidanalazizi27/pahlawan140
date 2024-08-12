@@ -33,7 +33,7 @@ export default function NavbarCustom() {
     else if (path === "/ruangbaca") setActiveMenu("Ruang Baca");
     else if (path === "/zi-rb") setActiveMenu("ZI-RB");
     else if (path.startsWith("/mitraqita")) setActiveMenu("MitraQita");
-    else if (path.startsWith("/aduan")) setActiveMenu("Aduan");
+    else if (path === "/aduan") setActiveMenu("Aduan");
   }, [location]);
 
   const getMenuClasses = (menu) => {
@@ -64,42 +64,27 @@ export default function NavbarCustom() {
       </NavbarContent>
       <NavbarContent className="hidden gap-4 sm:flex" justify="end">
         <NavbarItem className="hidden lg:flex">
-          <RouterLink
-            to="/"
-            className={getMenuClasses("Beranda")}
-          >
+          <RouterLink to="/" className={getMenuClasses("Beranda")}>
             Beranda
           </RouterLink>
         </NavbarItem>
         <NavbarItem className="hidden lg:flex">
-          <RouterLink
-            to="/myoffice"
-            className={getMenuClasses("MyOffice")}
-          >
-            MyOffice
-          </RouterLink>
-        </NavbarItem>
-        <NavbarItem className="hidden lg:flex">
-          <RouterLink
-            to="/temanluki"
-            className={getMenuClasses("Teman Luki")}
-          >
+          <RouterLink to="/temanluki" className={getMenuClasses("Teman Luki")}>
             Teman Luki
           </RouterLink>
         </NavbarItem>
         <NavbarItem className="hidden lg:flex">
-          <RouterLink
-            to="/ruangbaca"
-            className={getMenuClasses("Ruang Baca")}
-          >
+          <RouterLink to="/ruangbaca" className={getMenuClasses("Ruang Baca")}>
             Ruang Baca
           </RouterLink>
         </NavbarItem>
         <NavbarItem className="hidden lg:flex">
-          <RouterLink
-            to="/zi-rb"
-            className={getMenuClasses("ZI-RB")}
-          >
+          <RouterLink to="/aduan" className={getMenuClasses("Aduan")}>
+            Aduan
+          </RouterLink>
+        </NavbarItem>
+        <NavbarItem className="hidden lg:flex">
+          <RouterLink to="/zi-rb" className={getMenuClasses("ZI-RB")}>
             ZI-RB
           </RouterLink>
         </NavbarItem>
@@ -128,99 +113,54 @@ export default function NavbarCustom() {
             }}
           >
             <DropdownItem className="font-bold" key="daftarmitra">
-              <p className="font-semibold text-[14px] font-inter">
-                Daftar Mitra 2024
-              </p>
+              <a href="https://mitra.bps.go.id/registrasi">
+                <p className="font-semibold text-[14px] font-inter">
+                  Daftar Mitra 2024
+                </p>
+              </a>
             </DropdownItem>
             <DropdownItem className="font-bold" key="sobat">
-              <p className="font-semibold text-[14px] font-inter">
-                Aplikasi Sobat
-              </p>
+              <a href="https://mitra.bps.go.id/login">
+                <p className="font-semibold text-[14px] font-inter">
+                  Aplikasi Sobat
+                </p>
+              </a>
             </DropdownItem>
           </DropdownMenu>
         </Dropdown>
-        <Dropdown>
-          <NavbarItem>
-            <DropdownTrigger>
-              <Button
-                disableRipple
-                className={
-                  getMenuClasses("Aduan") +
-                  " p-0 bg-transparent data-[hover=true]:bg-transparent font-inter"
-                }
-                endContent={icons.chevron}
-                radius="sm"
-                variant="light"
-              >
-                Aduan
-              </Button>
-            </DropdownTrigger>
-          </NavbarItem>
-          <DropdownMenu
-            aria-label="ACME features"
-            className="w-[180px] font-inter text-pdarkblue"
-            itemClasses={{
-              base: "gap-4",
-            }}
-          >
-            <DropdownItem className="font-bold" key="pengaduan">
-              <p className="font-semibold text-[14px] font-inter">Pengaduan</p>
-            </DropdownItem>
-            <DropdownItem className="font-bold" key="whitle">
-              <p className="font-semibold text-[14px] font-inter">
-                Whistle Blowing System
-              </p>
-            </DropdownItem>
-            <DropdownItem className="font-bold" key="gratifikasi">
-              <p className="font-semibold text-[14px] font-inter">
-                Gratifikasi
-              </p>
-            </DropdownItem>
-          </DropdownMenu>
-        </Dropdown>
+        <NavbarItem className="hidden lg:flex">
+          <RouterLink to="/myoffice" className={getMenuClasses("MyOffice")}>
+            MyOffice
+          </RouterLink>
+        </NavbarItem>
       </NavbarContent>
 
       <NavbarMenu>
         <NavbarMenuItem className="lg:flex">
-          <RouterLink
-            to="/"
-            className={getMenuClasses("Beranda")}
-          >
+          <RouterLink to="/" className={getMenuClasses("Beranda")}>
             Beranda
           </RouterLink>
         </NavbarMenuItem>
         <NavbarMenuItem className="lg:flex">
-          <RouterLink
-            to="/myoffice"
-            className={getMenuClasses("MyOffice")}
-          >
-            MyOffice
-          </RouterLink>
-        </NavbarMenuItem>
-        <NavbarMenuItem className="lg:flex">
-          <RouterLink
-            to="/temanluki"
-            className={getMenuClasses("Teman Luki")}
-          >
+          <RouterLink to="/temanluki" className={getMenuClasses("Teman Luki")}>
             Teman Luki
           </RouterLink>
         </NavbarMenuItem>
         <NavbarMenuItem className="lg:flex">
-          <RouterLink
-            to="/ruangbaca"
-            className={getMenuClasses("Ruang Baca")}
-          >
+          <RouterLink to="/ruangbaca" className={getMenuClasses("Ruang Baca")}>
             Ruang Baca
           </RouterLink>
         </NavbarMenuItem>
         <NavbarMenuItem className="lg:flex">
-          <RouterLink
-            to="/zi-rb"
-            className={getMenuClasses("ZI-RB")}
-          >
+          <RouterLink to="/zi-rb" className={getMenuClasses("ZI-RB")}>
             ZI-RB
           </RouterLink>
         </NavbarMenuItem>
+        <NavbarItem className="hidden lg:flex">
+          <RouterLink to="/aduan" className={getMenuClasses("Aduan")}>
+            Aduan
+          </RouterLink>
+        </NavbarItem>
         <Dropdown>
           <NavbarMenuItem>
             <DropdownTrigger>
@@ -246,65 +186,26 @@ export default function NavbarCustom() {
             }}
           >
             <DropdownItem className="font-bold" key="daftarmitra">
-              <p className="font-semibold text-[14px] font-inter">
-                Daftar Mitra 2024
-              </p>
+              <a href="https://mitra.bps.go.id/registrasi">
+                <p className="font-semibold text-[14px] font-inter">
+                  Daftar Mitra 2024
+                </p>
+              </a>
             </DropdownItem>
-            <DropdownItem
-              className="font-semibold text-[14px] font-inter"
-              key="sobat"
-            >
-              <p className="font-semibold text-[14px] font-inter">
-                Aplikasi Sobat
-              </p>
-            </DropdownItem>
-          </DropdownMenu>
-        </Dropdown>
-        <Dropdown>
-          <NavbarMenuItem>
-            <DropdownTrigger>
-              <Button
-                disableRipple
-                className={
-                  getMenuClasses("Aduan") +
-                  " p-0 bg-transparent data-[hover=true]:bg-transparent justify-between"
-                }
-                endContent={icons.chevron}
-                radius="sm"
-                variant="light"
-              >
-                Aduan
-              </Button>
-            </DropdownTrigger>
-          </NavbarMenuItem>
-          <DropdownMenu
-            aria-label="ACME features"
-            className="w-[180px] font-inter text-pdarkblue"
-            itemClasses={{
-              base: "gap-4",
-            }}
-          >
-            <DropdownItem className="font-bold" key="pengaduan">
-              <p className="font-semibold text-[14px] font-inter">Pengaduan</p>
-            </DropdownItem>
-            <DropdownItem
-              className="font-semibold text-[14px] font-inter"
-              key="whitle"
-            >
-              <p className="font-semibold text-[14px] font-inter">
-                Whistle Blowing System
-              </p>
-            </DropdownItem>
-            <DropdownItem
-              className="font-semibold text-[14px] font-inter"
-              key="gratifikasi"
-            >
-              <p className="font-semibold text-[14px] font-inter">
-                Gratifikasi
-              </p>
+            <DropdownItem className="font-bold" key="sobat">
+              <a href="https://mitra.bps.go.id/login">
+                <p className="font-semibold text-[14px] font-inter">
+                  Aplikasi Sobat
+                </p>
+              </a>
             </DropdownItem>
           </DropdownMenu>
         </Dropdown>
+        <NavbarMenuItem className="lg:flex">
+          <RouterLink to="/myoffice" className={getMenuClasses("MyOffice")}>
+            MyOffice
+          </RouterLink>
+        </NavbarMenuItem>
       </NavbarMenu>
     </Navbar>
   );
