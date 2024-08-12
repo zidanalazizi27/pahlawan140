@@ -59,7 +59,7 @@ const LayananSection = () => {
       title: "Ayo Magang",
       description:
         "Nikmati layanan kemudahan untuk mendapatkan kesempatan magang di BPS Kabupaten Sidoarjo untuk mendapatkan banyak pengalaman dan ilmu.",
-      link: "#",
+      link: "/ayomagang",
     },
     {
       bgColor: "#468585",
