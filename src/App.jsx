@@ -10,6 +10,9 @@ import BerhasilDaftar from "./pages/berhasildaftar";
 import Formulir from "./pages/formmagang";
 import Konfirmasi from "./pages/konfirmasimagang";
 import RuangBaca from "./pages/ruangbaca";
+import TemanLuki from "./pages/temanluki";
+import Aduan from "./pages/aduan";
+import Login from './pages/login';
 import { NextUIProvider } from "@nextui-org/react";
 
 function App() {
@@ -57,8 +60,39 @@ function App() {
       />
       <Route
           path="/ruangbaca"
-          element={<RuangBaca />}
-      />
+          element={
+            <>
+              <RuangBaca />
+              <BackToTop />
+            </>
+          }
+        />
+        <Route
+          path="/temanluki"
+          element={
+            <>
+              <TemanLuki />
+              <BackToTop />
+            </>
+          }
+        />
+        <Route
+          path="/aduan"
+          element={
+            <>
+              <Aduan />
+              <BackToTop />
+            </>
+          }
+        />
+        <Route
+          path="/login"
+          element={
+            <>
+              <Login />
+            </>
+          }
+        />
       </Routes>
       <BackToTop />
       </div>
