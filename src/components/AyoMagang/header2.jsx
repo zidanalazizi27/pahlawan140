@@ -66,42 +66,39 @@ export default function NavbarCustom() {
         <NavbarItem className="hidden xs:flex">
           <Link
             href="/berandamasuk"
-            className={getMenuClasses("Masuk")}
+            className={getMenuClasses("Masuk")+"text-[16px]"}
             onClick={() => handleMenuClick("Masuk")}
           >
             Beranda
           </Link>
         </NavbarItem>
-        <NavbarItem className="hidden lg:flex">
-          <Link
-            href="/berandamasuk"
-            className={getMenuClasses("Daftar")}
-            onClick={() => handleMenuClick("Daftar")}
-          >
+        <NavbarItem>
+          <p className="font-bold font-inter sm:text-[14px] text-pdarkblue">
             Hai, Udang!
-          </Link>
+          </p>
+        </NavbarItem>
+        <NavbarItem className="hidden xs:flex">
+        <div className="dropdown hover:bg-none">
+          <div tabIndex={0} role="button" className="btn">
           <img
             src={LogoImage}
             alt="User Logo"
-            className="ml-2 rounded-full cursor-pointer"
-            style={{ width: '24px', height: '24px' }}
+            className="rounded-full cursor-pointer"
+            style={{ width: '35px', height: '35px' }}
             onClick={handleLogoClick}
           />
-          {isDropdownOpen && (
-            <button
-              className="bg-pdarkblue text-white font-inter text-sm py-1 px-3 rounded-full ml-2"
-              onClick={() => window.location.href = '/ayomagang'}
-            >
-              Keluar
-            </button>
-          )}
+          </div>
+          <ul tabIndex={0} className="dropdown-content menu bg-base rounded-box z-[1] w-21 p-1 shadow" href="/berandamasuk" >
+            <li className="text-pdarkblue font-assistant font-semibold"><a>Keluar</a></li>
+          </ul>
+        </div>
         </NavbarItem>
       </NavbarContent>
       <NavbarMenu isOpen={isMenuOpen} className="lg:hidden">
         <NavbarMenuItem>
           <Link
             href="/berandamasuk"
-            className={getMenuClasses("Masuk")}
+            className={getMenuClasses("Masuk") + "text-[18px]"}
             onClick={() => handleMenuClick("Masuk")}
           >
             Beranda
@@ -125,7 +122,8 @@ export default function NavbarCustom() {
           {isDropdownOpen && (
             <button
               className="bg-pdarkblue text-white py-1 px-3 rounded-full ml-2"
-              onClick={() => window.location.href = '/ayomagang'}
+              onClick={() => window.location.href = '/ayomagang'
+              }
             >
               Keluar
             </button>

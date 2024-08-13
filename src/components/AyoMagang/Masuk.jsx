@@ -9,17 +9,17 @@ const Masuk = () => {
       style={{ backgroundImage: "url('/image/bg_am.png')", backgroundSize: 'cover' }}
     >
       <div className="relative z-10 flex flex-col items-center justify-center w-full max-w-sm p-8 m-5 bg-white shadow-md rounded-xl md:max-w-md" style = {{ marginTop: '80px' }}>
-        <div className="flex flex-col items-center mb-8">
+        <div className="flex flex-col items-center mb-3">
           <img
             src="/image/logo_am.png"
             alt="Logo"
-            className="w-20 h-55 mb-3 md:w-30 md:h-50"
+            className="w-25 h-40 mb-2 md:w-30 md:h-50"
           />
           <p className="text-lg font-bold font-inter md:text-xl">
             MASUK
           </p>
-          <p className="text-sm font-semibold tracking-wider text-gray-500 font-assistant">
-            AYO MAGANG
+          <p className="text-sm italic font-semibold tracking-wider text-gray-500 font-assistant">
+            AYO MAGANG!
           </p>
         </div>
         <form className="flex flex-col w-full gap-4 font-quicksand">

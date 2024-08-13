@@ -17,7 +17,6 @@ const FormMagang = () => {
     <>
       <NavbarCustom />
       <Form />
-      <Footer />
     </>
   );
 };

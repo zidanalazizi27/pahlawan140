@@ -16,7 +16,9 @@ const BerandaMasuk = () => {
   return (
     <>
       <Header />
-      <Beranda />
+      <div data-aos="fade-up" data-aos-delay="100">
+        <Beranda />
+      </div>
       <Footer />
     </>
   );
