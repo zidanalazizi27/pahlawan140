@@ -78,8 +78,8 @@ export default function NavbarCustom() {
           </p>
         </NavbarItem>
         <NavbarItem className="hidden xs:flex">
-        <div className="dropdown hover:bg-none">
-          <div tabIndex={0} role="button" className="btn">
+        <div className="dropdown bg-none hover:bg-none">
+          <div tabIndex={0} role="button" className="bg-none">
           <img
             src={LogoImage}
             alt="User Logo"
@@ -88,7 +88,7 @@ export default function NavbarCustom() {
             onClick={handleLogoClick}
           />
           </div>
-          <ul tabIndex={0} className="dropdown-content menu bg-base rounded-box z-[1] w-21 p-1 shadow" href="/berandamasuk" >
+          <ul tabIndex={4} className="dropdown-content menu bg-base-100 rounded-box z-[1] w-21 p-1 shadow" href="/ayomagang" >
             <li className="text-pdarkblue font-assistant font-semibold"><a>Keluar</a></li>
           </ul>
         </div>
@@ -105,13 +105,9 @@ export default function NavbarCustom() {
           </Link>
         </NavbarMenuItem>
         <NavbarMenuItem>
-          <Link
-            href="/berandamasuk"
-            className={getMenuClasses("Daftar")}
-            onClick={() => handleMenuClick("Daftar")}
-          >
-            Hi, Udang!
-          </Link>
+          <p className="font-bold font-inter text-[14px] text-pdarkblue mb-3">
+            Hai, Udang!
+          </p>
           <img
             src={LogoImage}
             alt="User Logo"
@@ -121,11 +117,11 @@ export default function NavbarCustom() {
           />
           {isDropdownOpen && (
             <button
-              className="bg-pdarkblue text-white py-1 px-3 rounded-full ml-2"
-              onClick={() => window.location.href = '/ayomagang'
-              }
+              className="bg-base text-white py-1 px-3 dropdown-content rounded-full mt-2 ml-5"
             >
+            <Link to="/ayomagang" class="text-inherit no-underline text-pdarkblue font-inter sm:text-base text-sm">
               Keluar
+            </Link>
             </button>
           )}
         </NavbarMenuItem>
