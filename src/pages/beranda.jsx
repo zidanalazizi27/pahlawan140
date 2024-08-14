@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import LayananSection from "../components/LayananSection";
 import NavbarCustom from "../components/NavbarCustom";
 import AplikasiLayanan from "../components/AplikasiLayanan";
@@ -8,6 +8,7 @@ import Carousel from "../components/CarouselCustom";
 import Footer from "../components/Footer/Footer";
 import Berita from "../components/Berita";
 import Profil from "../components/Profil";
+import Penghargaan from "../components/Penghargaan";
 
 const Beranda = () => {
   useEffect(() => {
@@ -32,9 +33,10 @@ const Beranda = () => {
           <Berita />
         </div>
         <div data-aos="fade-up" data-aos-delay="300">
-          <Profil />
+          <Penghargaan />
         </div>
       </div>
+      <br />
       <Footer />
     </>
   );
