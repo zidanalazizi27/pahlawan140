@@ -53,15 +53,11 @@ export default function Penghargaan() {
         className="mySwiper w-[100%] h-[200px]" // Adjust the width and height here
       >
         {[
-          "/image/sertifikat.png",
-          "/image/sertifikat.png",
-          "/image/sertifikat.png",
-          "/image/sertifikat.png",
-          "/image/sertifikat.png",
-          "/image/sertifikat.png",
-          "/image/sertifikat.png",
-          "/image/sertifikat.png",
-          "/image/sertifikat.png",
+          "/image/Sertifikat/1.jpg",
+          "/image/Sertifikat/2.jpg",
+          "/image/Sertifikat/3.jpg",
+          "/image/Sertifikat/4.jpg",
+          "/image/Sertifikat/5.jpg",
         ].map((src, index) => (
           <SwiperSlide
             key={index}

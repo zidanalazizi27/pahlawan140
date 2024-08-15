@@ -13,6 +13,8 @@ const CarouselCustom = () => {
   return (
     <>
       <Carousel
+        effect="fade"
+        speed={2000}
         arrows
         infinite={true}
         autoplay

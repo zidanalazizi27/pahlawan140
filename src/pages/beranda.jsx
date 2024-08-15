@@ -31,6 +31,7 @@ const Beranda = () => {
         </div>
         <div data-aos="fade-up" data-aos-delay="200">
           <Berita />
+          <br />
         </div>
         <div data-aos="fade-up" data-aos-delay="300">
           <Penghargaan />
