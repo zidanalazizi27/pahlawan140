@@ -63,11 +63,48 @@ export default function NavbarCustom() {
         </NavbarBrand>
       </NavbarContent>
       <NavbarContent className="hidden gap-4 sm:flex" justify="end">
-        <NavbarItem className="hidden lg:flex">
-          <RouterLink to="/" className={getMenuClasses("Beranda")}>
-            Beranda
-          </RouterLink>
-        </NavbarItem>
+      <Dropdown>
+          <NavbarItem>
+            <DropdownTrigger>
+              <Button
+                disableRipple
+                className={
+                  getMenuClasses("Beranda") +
+                  " p-0 bg-transparent data-[hover=true]:bg-transparent font-inter text-pdarkblue"
+                }
+                endContent={icons.chevron}
+                radius="sm"
+                variant="light"
+              >
+                <RouterLink to="/" className={getMenuClasses("Beranda")}>
+                  Beranda
+                </RouterLink>
+              </Button>
+            </DropdownTrigger>
+          </NavbarItem>
+          <DropdownMenu
+            aria-label="ACME features"
+            className="w-[180px] font-inter text-pdarkblue"
+            itemClasses={{
+              base: "gap-4",
+            }}
+          >
+            <DropdownItem className="font-bold" key="berita">
+                <p className="font-semibold text-[14px] font-inter">
+                  <RouterLink to="/berita" className={getMenuClasses("Berita")}>
+                    Berita
+                  </RouterLink>
+                </p>
+            </DropdownItem>
+            <DropdownItem className="font-bold" key="profil">
+              <RouterLink to="/profil" className={getMenuClasses("Profil")}>
+              <p className="font-semibold text-[14px] font-inter">
+                Profil
+              </p>
+              </RouterLink>
+            </DropdownItem>
+          </DropdownMenu>
+        </Dropdown>
         <NavbarItem className="hidden lg:flex">
           <RouterLink to="/temanluki" className={getMenuClasses("Teman Luki")}>
             Teman Luki
@@ -83,11 +120,46 @@ export default function NavbarCustom() {
             Aduan
           </RouterLink>
         </NavbarItem>
-        <NavbarItem className="hidden lg:flex">
-          <RouterLink to="/zi-rb" className={getMenuClasses("ZI-RB")}>
-            ZI-RB
-          </RouterLink>
-        </NavbarItem>
+        <Dropdown>
+          <NavbarItem>
+            <DropdownTrigger>
+              <Button
+                disableRipple
+                className={
+                  getMenuClasses("MitraQita") +
+                  " p-0 bg-transparent data-[hover=true]:bg-transparent font-inter"
+                }
+                endContent={icons.chevron}
+                radius="sm"
+                variant="light"
+              >
+                ZI-RB
+              </Button>
+            </DropdownTrigger>
+          </NavbarItem>
+        <DropdownMenu
+            aria-label="ACME features"
+            className="w-[210px] font-inter text-pdarkblue"
+            itemClasses={{
+              base: "gap-4",
+            }}
+          >
+            <DropdownItem className="font-bold" key="berita">
+                <a href="https://rb.bps.go.id/">
+                <p className="font-semibold text-[14px] font-inter">
+                  BPS RI
+                </p>
+              </a>
+            </DropdownItem>
+            <DropdownItem className="font-bold" key="sobat">
+              <p className="font-semibold text-[14px] font-inter">
+                  <RouterLink to="/" className={getMenuClasses("Berita")}>
+                    BPS Kabupaten Sidoarjo
+                  </RouterLink>
+                </p>
+            </DropdownItem>
+          </DropdownMenu>
+        </Dropdown>
         <Dropdown>
           <NavbarItem>
             <DropdownTrigger>
@@ -136,11 +208,49 @@ export default function NavbarCustom() {
       </NavbarContent>
 
       <NavbarMenu>
-        <NavbarMenuItem className="lg:flex">
-          <RouterLink to="/" className={getMenuClasses("Beranda")}>
-            Beranda
-          </RouterLink>
-        </NavbarMenuItem>
+      <Dropdown>
+          <NavbarItem>
+            <DropdownTrigger>
+              <Button
+                disableRipple
+                className={
+                  getMenuClasses("Beranda") +
+                  " p-0 bg-transparent data-[hover=true]:bg-transparent font-inter text-pdarkblue"
+                }
+                endContent={icons.chevron}
+                radius="sm"
+                variant="light"
+              >
+                <RouterLink to="/" className={getMenuClasses("Beranda")}>
+                  Beranda
+                </RouterLink>
+              </Button>
+            </DropdownTrigger>
+          </NavbarItem>
+          <DropdownMenu
+            aria-label="ACME features"
+            className="w-[180px] font-inter text-pdarkblue"
+            itemClasses={{
+              base: "gap-4",
+            }}
+          >
+            <DropdownItem className="font-bold" key="berita">
+                <p className="font-semibold text-[14px] font-inter">
+                  <RouterLink to="/berita" className={getMenuClasses("Berita")}>
+                    Berita
+                  </RouterLink>
+                </p>
+            </DropdownItem>
+            <DropdownItem className="font-bold" key="profil">
+              <RouterLink to="/profil" className={getMenuClasses("Profil")}>
+              <p className="font-semibold text-[14px] font-inter">
+                Profil
+              </p>
+              </RouterLink>
+            </DropdownItem>
+          </DropdownMenu>
+        </Dropdown>
+        
         <NavbarMenuItem className="lg:flex">
           <RouterLink to="/temanluki" className={getMenuClasses("Teman Luki")}>
             Teman Luki
@@ -151,11 +261,46 @@ export default function NavbarCustom() {
             Ruang Baca
           </RouterLink>
         </NavbarMenuItem>
-        <NavbarMenuItem className="lg:flex">
-          <RouterLink to="/zi-rb" className={getMenuClasses("ZI-RB")}>
-            ZI-RB
-          </RouterLink>
-        </NavbarMenuItem>
+        <Dropdown>
+          <NavbarItem>
+            <DropdownTrigger>
+              <Button
+                disableRipple
+                className={
+                  getMenuClasses("ZI-RB") +
+                  " p-0 bg-transparent text-left data-[hover=true]:bg-transparent font-inter"
+                }
+                endContent={icons.chevron}
+                radius="sm"
+                variant="light"
+              >
+                ZI-RB
+              </Button>
+            </DropdownTrigger>
+          </NavbarItem>
+        <DropdownMenu
+            aria-label="ACME features"
+            className="w-[210px] font-inter text-pdarkblue"
+            itemClasses={{
+              base: "gap-4",
+            }}
+          >
+            <DropdownItem className="font-bold" key="berita">
+                <a href="https://rb.bps.go.id/">
+                <p className="font-semibold text-[14px] font-inter">
+                  BPS RI
+                </p>
+              </a>
+            </DropdownItem>
+            <DropdownItem className="font-bold" key="sobat">
+              <p className="font-semibold text-[14px] font-inter">
+                  <RouterLink to="/" className={getMenuClasses("Berita")}>
+                    BPS Kabupaten Sidoarjo
+                  </RouterLink>
+                </p>
+            </DropdownItem>
+          </DropdownMenu>
+        </Dropdown>
         <NavbarItem className="hidden lg:flex">
           <RouterLink to="/aduan" className={getMenuClasses("Aduan")}>
             Aduan
