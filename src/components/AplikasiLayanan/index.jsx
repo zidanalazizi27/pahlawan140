@@ -23,9 +23,9 @@ export default function AplikasiLayanan() {
     },
     {
       title: "Desa Cantik",
-      img: "/pict/Desa Cantik.jpeg",
+      img: "/pict/descan.png",
       desc: "Program yang diinisiasi Badan Pusat Statistik (BPS) untuk meningkatkan literasi statistik di tingkat desa dan memperkuat kapasitas pemerintah desa dalam mengelola data dan informasi statistik secara mandiri, sehingga dapat digunakan untuk perencanaan dan pengambilan keputusan yang lebih baik.",
-      link: "https://siokicantik.bpsoki.com/"
+      link: "https://desa-cantik-sda.vercel.app/"
     }
   ];
 

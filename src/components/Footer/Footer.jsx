@@ -70,7 +70,7 @@ export default function Footer() {
             {/* Divider here */}
             <div className="w-[6px] rounded-full h-24 bg-pdarkblue mx-4"></div>
 
-            <p className="block text-2xl">
+            <p className="block text-lg">
               <b>BPS</b> <span className="block">Kabupaten</span>{" "}
               <span className="block">
                 <b>Sidoarjo</b>
@@ -79,13 +79,13 @@ export default function Footer() {
           </div>
         </a>
 
-        <p className="z-40 mt-5 ml-6 text-lg whitespace-pre-wrap w-42 md:text-left text-pdarkblue">
+        <p className="z-40 mt-5 ml-6 text-xs whitespace-pre-wrap w-42 md:text-left text-pdarkblue">
           <b>
-            <span className="mr-2">&#169;</span>BPS Sidoarjo 2024
+            <span className="mr-2">&#169;</span>2024 BPS Kabupaten Sidoarjo 
           </b>
         </p>
       </div>
-      <div className="grid grid-cols-1 gap-10 mx-auto md:grid-cols-2 md:w-9/12">
+      <div className="grid grid-cols-1 gap-0 mx-auto md:grid-cols-2 md:w-9/12 text-xs">
         <div>
           <FooterTitle title="Media Sosial" />
           <FooterList items={medSos} />

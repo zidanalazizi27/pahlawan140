@@ -1,8 +1,9 @@
 /* eslint-disable react/no-unescaped-entities */
 import React, { useState } from "react";
 import "tailwindcss/tailwind.css";
+import Pegawai from "./pegawai.jsx";
 
-const App = () => {
+export default function ProfilBPS(){
   const [selectedMenu, setSelectedMenu] = useState("Informasi Umum BPS");
 
   const menuItems = [
@@ -64,7 +65,9 @@ const App = () => {
     ),
     "Core Value": "",
     "Struktur Organisasi": "",
-    "Profil Pejabat BPS": "",
+    "Profil Pejabat BPS": (
+      <Pegawai />
+    ),
     "Alamat dan Kontak BPS": (
       <p className="text-[12px]">
         <b>Badan Pusat Statistik Kabupaten Sidoarjo</b>
@@ -122,5 +125,3 @@ const App = () => {
     </>
   );
 };
-
-export default App;
