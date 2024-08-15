@@ -17,7 +17,7 @@ const Daftar = () => {
   return (
     <div
       className="relative flex items-center justify-center min-h-screen"
-      style={{ backgroundImage: "url('/image/bg_am.png')", backgroundSize: 'cover' }}
+      style={{ backgroundImage: "url('/image/bg.svg')", backgroundSize: 'cover' }}
     >
       <div className="relative z-10 flex flex-col items-center justify-center w-full max-w-md p-8 mt-10 bg-white shadow-md rounded-xl md:max-w-lg" style={{ marginTop: '120px', marginBottom: '60px' }}>
         <div className="flex flex-col items-center mb-8">
@@ -26,7 +26,7 @@ const Daftar = () => {
             alt="Logo"
             className="w-25 h-40 mb-3 md:w-30 md:h-50"
           />
-          <p className="text-md font-bold font-inter md:text-xl">
+          <p className="text-lg font-bold font-inter md:text-xl">
             REGISTRASI AKUN MAGANG
           </p>
           <p className="text-sm italic font-semibold tracking-wider text-gray-500 font-assistant">

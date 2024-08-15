@@ -6,7 +6,7 @@ const Masuk = () => {
   return (
     <div
       className="relative flex items-center justify-center min-h-screen"
-      style={{ backgroundImage: "url('/image/bg_am.png')", backgroundSize: 'cover' }}
+      style={{ backgroundImage: "url('/image/bg.svg')", backgroundSize: 'cover' }}
     >
       <div className="relative z-10 flex flex-col items-center justify-center w-full max-w-sm p-8 m-5 bg-white shadow-md rounded-xl md:max-w-md" style = {{ marginTop: '80px' }}>
         <div className="flex flex-col items-center mb-3">
