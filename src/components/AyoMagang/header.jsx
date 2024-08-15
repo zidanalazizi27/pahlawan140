@@ -49,9 +49,9 @@ export default function NavbarCustom() {
             height={48}
           />
           </a>
-          <p className="font-[800] font-inter italic text-[14px] sm:text-[18px] text-pdarkblue ml-3 block xs:inline-block">
+          <p className="font-[800] font-inter italic text-[20px] sm:text-[18px] text-pdarkblue ml-3 block xs:inline-block">
             <Link href="/ayomagang" style={{ color: 'inherit', textDecoration: 'none' }}>
-              AYO MAGANG <br className="xs:hidden" />
+              AYO MAGANG! <br className="xs:hidden" />
             </Link>
           </p>
         </NavbarBrand>
@@ -62,6 +62,16 @@ export default function NavbarCustom() {
             href="/masukam"
             className={getMenuClasses("Masuk")}
             onClick={() => handleMenuClick("Masuk")}
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              padding: '10px 15px',
+              borderRadius: '15px', // Makes the background round
+              backgroundColor: '#0B588F', // Background color
+              color: 'white', // Text color
+              textDecoration: 'none', // Remove underline
+            }}
           >
             Masuk
           </Link>
@@ -71,22 +81,32 @@ export default function NavbarCustom() {
             href="/daftaram"
             className={getMenuClasses("Daftar")}
             onClick={() => handleMenuClick("Daftar")}
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              padding: '10px 15px',
+              borderRadius: '15px', // Makes the background round
+              backgroundColor: '#EB891B', // Background color
+              color: 'white', // Text color
+              textDecoration: 'none', // Remove underline
+            }}
           >
             Daftar Akun
           </Link>
         </NavbarItem>
       </NavbarContent>
-      <NavbarMenu isOpen={isMenuOpen} className="lg:hidden">
-        <NavbarMenuItem>
+      <NavbarMenu isOpen={isMenuOpen}>
+        <NavbarMenuItem className="hidden lg:flex px-5">
           <Link
             href="/masukam"
-            className={getMenuClasses("Masuk")}
+            className={`${getMenuClasses("Masuk")} font-semibold font-inter text-white bg-pblue py-2 px-4 rounded-lg transition-colors duration-100 hover:bg-sky-700 hover:outline-0 hover:outline-white hover:outline hover:outline-offset-2`}
             onClick={() => handleMenuClick("Masuk")}
           >
             Masuk
-          </Link>
+        </Link>
         </NavbarMenuItem>
-        <NavbarMenuItem>
+        <NavbarMenuItem className="hidden lg:flex"> 
           <Link
             href="/daftaram"
             className={getMenuClasses("Daftar")}

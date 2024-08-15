@@ -2,10 +2,12 @@ import React from 'react';
 import { Button } from '@nextui-org/react';
 import urang from '/image/Urang.png';
 import { Link } from 'react-router-dom';
+import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
+import 'react-vertical-timeline-component/style.min.css';
 
 const Beranda = () => {
   return (
-    <div style={{ padding: '80px 20px 20px' }}>
+    <div style={{ padding: '4rem 0px' }}>
       <div style={{
         display: 'flex',
         justifyContent: 'space-between',
@@ -16,235 +18,111 @@ const Beranda = () => {
         borderRadius: '10px',
         position: 'relative'
       }}>
-        <div style={{ marginLeft: '40px', marginRight: '40px' }}>
-          <h1 className="font-bold italic" style={{ fontSize: '2rem', margin: 0 }}>Ayo Magang!</h1>
-          <h2 className="font-semibold" style={{ fontSize: '1.5rem', margin: 0 }}>BPS Kabupaten Sidoarjo</h2>
-          <p style={{ fontSize: '1rem', margin: '10px 0' }}>
+        <div class="px-4 sm:px-10">
+          <h1 class="text-xl sm:text-2xl font-bold italic mb-3">Ayo Magang!</h1>
+          <h2 class="text-lg sm:text-xl font-semibold font-inter">BPS Kabupaten Sidoarjo</h2>
+          <p class="text-sm sm:text-base my-1 font-assistant font-light">
             Sebuah platform yang memfasilitasi pengajuan magang bagi mahasiswa/i dari berbagai universitas atau perguruan tinggi untuk
-            memperoleh pengalaman bekerja secara nyata di lingkungan
-            instansi Badan Pusat Statistik Kabupaten Sidoarjo sebagai penyedia
+            memperoleh pengalaman bekerja secara nyata di lingkungan instansi Badan Pusat Statistik Kabupaten Sidoarjo sebagai penyedia
             data statistik di Kabupaten Sidoarjo.
           </p>
           <Button
             auto
-            style={{
-              backgroundColor: '#EB891B',
-              color: 'white',
-              fontFamily: 'Inter, sans-serif',
-            }}
+            class="bg-gradient-to-r from-[#EB891B] to-[#ff9c3f] text-white font-inter font-semibold mt-2 rounded-full px-5 py-3 shadow-md transform transition-transform duration-300 ease-in-out hover:scale-105"
           >
-            <Link to="/formulir" style={{ color: 'inherit', textDecoration: 'none' }}>
+            <Link to="/formulir" class="text-inherit no-underline font-inter sm:text-base text-sm">
               Daftar Magang
             </Link>
           </Button>
         </div>
-        <div>
-          <img src={urang} alt="Urang" style={{ maxWidth: '300px', marginRight: '40px' }} />
+        <div className=''>
+          <img
+            src={urang}
+            alt="Urang"
+            className="hidden sm:block w-full max-w-[250px] sm:max-w-[300px] md:max-w-[400px] lg:max-w-[600px] mx-auto sm:mr-12"
+          />
         </div>
-        <div style={{
-          position: 'absolute',
-          bottom: '-50px',
-          left: '50%',
-          transform: 'translateX(-50%)',
-          display: 'flex',
-          backgroundColor: '#13466A',
-          padding: '10px 20px',
-          borderRadius: '10px',
-          boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.1)',
-          color: 'white',
-          justifyContent: 'space-between',
-          width: '35%',
-        }}>
-          <div style={{ textAlign: 'center', flex: 1 }}>
-            <h3 style={{ fontSize: '2rem', margin: 0, fontFamily: 'Inter, sans-serif' }}>6</h3>
-            <p style={{ fontSize: '1rem', margin: 0 }}>pendaftar</p>
+        <div className="absolute -bottom-[290px] sm:bottom-[-50px] left-1/2 transform -translate-x-1/2 flex flex-col sm:flex-row bg-[#13466A] p-3 sm:p-5 rounded-[10px] sm:rounded-[15px] shadow-lg text-white sm:justify-between w-[35%] sm:w-[30%]">
+          <div className="text-center flex-1 mb-2 sm:mb-0">
+            <h3 className="text-3xl sm:text-4xl m-0 font-assistant font-semibold leading-tight">6</h3>
+            <p className="text-lg sm:text-medium m-0 font-assistant font-normal">pendaftar</p>
           </div>
-          <div style={{
-            height: '40px',
-            width: '1px',
-            backgroundColor: 'white',
-            margin: '0 10px',
-            alignSelf: 'center'
-          }}></div>
-          <div style={{ textAlign: 'center', flex: 1 }}>
-            <h3 style={{ fontSize: '2rem', margin: 0, fontFamily: 'Inter, sans-serif' }}>9</h3>
-            <p style={{ fontSize: '1rem', margin: 0 }}>magang aktif</p>
+          <div className="h-[1px] sm:h-16 w-full sm:w-[1px] bg-white my-2 sm:my-0 sm:mx-3"></div>
+          <div className="text-center flex-1 mb-2 sm:mb-0">
+            <h3 className="text-3xl sm:text-4xl m-0 font-assistant font-semibold leading-tight">9</h3>
+            <p className="text-lg sm:text-medium m-0 font-assistant font-normal">magang aktif</p>
           </div>
-          <div style={{
-            height: '40px',
-            width: '1px',
-            backgroundColor: 'white',
-            margin: '0 10px',
-            alignSelf: 'center'
-          }}></div>
-          <div style={{ textAlign: 'center', flex: 1 }}>
-            <h3 style={{ fontSize: '2rem', margin: 0, fontFamily: 'Inter, sans-serif' }}>12</h3>
-            <p style={{ fontSize: '1rem', margin: 0 }}>kuota</p>
+          <div className="h-[1px] sm:h-16 w-full sm:w-[1px] bg-white my-2 sm:my-0 sm:mx-3"></div>
+          <div className="text-center flex-1">
+            <h3 className="text-3xl sm:text-4xl m-0 font-assistant font-semibold leading-tight">12</h3>
+            <p className="text-lg sm:text-medium m-0 font-assistant font-normal">kuota</p>
           </div>
         </div>
       </div>
-      <div style={{ marginTop: '80px' }}>
-        <h2 className="font-semibold" style={{ textAlign: 'center', fontSize: '1.4rem', margin: 0 }}>Tahapan Pendaftaran Magang</h2>
-        <p style={{ textAlign: 'center', fontSize: '1rem', margin: '8px 0' }}>
+      <div className="mt-[300px] sm:mt-[90px] px-4 sm:px-6 md:px-8 lg:px-12">
+        <h2 className="font-bold font-assistant text-gray-600 text-center text-[1.2rem] sm:text-[1.4rem] md:text-[1.6rem] lg:text-[1.8rem] m-0">
+          Tahapan Pendaftaran Magang
+        </h2>
+        <p className="font-assistant text-gray-500 text-center text-[0.9rem] sm:text-[1rem] md:text-[1.1rem] lg:text-[1.2rem] my-2">
           Berikut merupakan alur pendaftaran magang BPS Kabupaten Sidoarjo
         </p>
       </div>
-      <div style={{
-        backgroundColor: '#F0F0F0',
-        padding: '50px',
-        borderRadius: '10px',
-        marginTop: '50px',
-        position: 'relative'
-      }}>
-        <div style={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          margin: '30px 0',
-          position: 'relative'
-        }}>
-          <div style={{
-            position: 'absolute',
-            top: '50%',
-            left: '0',
-            right: '0',
-            height: '2px',
-            backgroundColor: '#26AAE1',
-            transform: 'translateY(-50%)'
-          }}></div>
 
-          <div style={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            position: 'relative',
-            margin: '0 20px'
-          }}>
-            <div style={{
-              backgroundColor: '#EB891B',
-              color: 'white',
-              borderRadius: '50%',
-              padding: '10px',
-              width: '30px',
-              height: '30px',
-              display: 'flex',
-              marginTop: '90px',
-              justifyContent: 'center',
-              alignItems: 'center',
-              zIndex: 1
-            }}>1</div>
-            <div style={{
-              backgroundColor: '#68B92E',
-              borderRadius: '10px',
-              padding: '10px',
-              color: 'white',
-              marginTop: '20px',
-              textAlign: 'center',
-              maxWidth: '600px'
-            }}>
-              <p style={{ margin: 0 }}>Registrasi & masuk akun Ayo Magang!</p>
-            </div>
-          </div>
-
-          <div style={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            position: 'relative',
-            margin: '0 20px'
-          }}>
-            <div style={{
-              backgroundColor: '#EB891B',
-              color: 'white',
-              borderRadius: '50%',
-              padding: '10px',
-              width: '30px',
-              height: '30px',
-              display: 'flex',
-              marginTop: '-15px',
-              justifyContent: 'center',
-              alignItems: 'center',
-              zIndex: 1
-            }}>2</div>
-            <div style={{
-              backgroundColor: '#68B92E',
-              borderRadius: '10px',
-              padding: '10px',
-              color: 'white',
-              marginTop: '-120px',
-              textAlign: 'center',
-              maxWidth: '600px'
-            }}>
-              <p style={{ margin: 0 }}>Isi dan lengkapi data yang diperlukan pada formulir</p>
-            </div>
-          </div>
-
-          <div style={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            position: 'relative',
-            margin: '0 20px'
-          }}>
-            <div style={{
-              backgroundColor: '#EB891B',
-              color: 'white',
-              borderRadius: '50%',
-              padding: '10px',
-              width: '30px',
-              height: '30px',
-              display: 'flex',
-              marginTop: '90px',
-              justifyContent: 'center',
-              alignItems: 'center',
-              zIndex: 1
-            }}>3</div>
-            <div style={{
-              backgroundColor: '#68B92E',
-              borderRadius: '10px',
-              padding: '10px',
-              color: 'white',
-              marginTop: '20px',
-              textAlign: 'center',
-              maxWidth: '600px'
-            }}>
-              <p style={{ margin: 0 }}>Unggah berkas-berkas pendukung seperti Surat Pengantar atau Proposal Magang (jika diperlukan)</p>
-            </div>
-          </div>
-
-          <div style={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            position: 'relative',
-            margin: '0 20px'
-          }}>
-            <div style={{
-              backgroundColor: '#EB891B',
-              color: 'white',
-              borderRadius: '50%',
-              padding: '10px',
-              width: '30px',
-              height: '30px',
-              display: 'flex',
-              marginTop: '-15px',
-              justifyContent: 'center',
-              alignItems: 'center',
-              zIndex: 1
-            }}>4</div>
-            <div style={{
-              backgroundColor: '#68B92E',
-              borderRadius: '10px',
-              padding: '10px',
-              color: 'white',
-              marginTop: '-120px',
-              textAlign: 'center',
-              maxWidth: '600px'
-            }}>
-              <p style={{ margin: 0 }}>Pastikan data diisi dengan baik dan benar, kemudian kirim data</p>
-            </div>
-          </div>
-        </div>
+      <div className='w-full mt-5'>
+        <VerticalTimeline lineColor='#0B588F'>
+          <VerticalTimelineElement
+            className="vertical-timeline-element--work"
+            contentStyle={{ background: 'linear-gradient(to right, #0B588F, #26AAE1)', color: '#fff', fontFamily: 'Inter, sans-serif', fontWeight: '600' }}
+            contentArrowStyle={{ borderRight: '7px solid #26AAE1' }}
+            iconStyle={{ background: '#EB891B', color: '#fff', boxShadow: "0 0 0 4px #fb6d17, inset 0 2px 0 rgba(0, 0, 0, .04), 0 3px 0 4px rgba(0, 0, 0, .05)"}}
+            icon={
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
+              <text x="6" y="20" font-size="24" font-weight="semibold" fill="currentColor">1</text>
+            </svg>
+            }
+          >
+            <h3 className="vertical-timeline-element-title">Registrasi & masuk akun Ayo Magang!</h3>
+          </VerticalTimelineElement>
+          <VerticalTimelineElement
+            className="vertical-timeline-element--work"
+            contentStyle={{ background: 'linear-gradient(to right, #0B588F, #26AAE1)', color: '#fff', fontFamily: 'Inter, sans-serif', fontWeight: '600' }}
+            contentArrowStyle={{ borderRight: '7px solid #0B588F' }}
+            iconStyle={{ background: '#EB891B', color: '#fff', boxShadow: "0 0 0 4px #fb6d17, inset 0 2px 0 rgba(0, 0, 0, .04), 0 3px 0 4px rgba(0, 0, 0, .05)"}}
+            icon={
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
+                <text x="5" y="20" font-size="24" font-weight="semibold" fill="currentColor">2</text>
+              </svg>
+            }
+          >
+            <h3 className="vertical-timeline-element-title">Isi dan lengkapi data yang diperlukan pada formulir</h3>
+          </VerticalTimelineElement>
+          <VerticalTimelineElement
+            className="vertical-timeline-element--work"
+            contentStyle={{ background: 'linear-gradient(to right, #0B588F, #26AAE1)', color: '#fff', fontFamily: 'Inter, sans-serif', fontWeight: '600' }}
+            contentArrowStyle={{ borderRight: '7px solid #26AAE1' }}
+            iconStyle={{ background: '#EB891B', color: '#fff', boxShadow: "0 0 0 4px #fb6d17, inset 0 2px 0 rgba(0, 0, 0, .04), 0 3px 0 4px rgba(0, 0, 0, .05)"}}
+            icon={
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
+                <text x="4" y="20" font-size="24" font-weight="semibold" fill="currentColor">3</text>
+              </svg>
+            }
+          >
+            <h3 className="vertical-timeline-element-title">Unggah berkas-berkas pendukung seperti Surat Pengantar atau Proposal Magang, jika diperlukan</h3>
+          </VerticalTimelineElement>
+          <VerticalTimelineElement
+            className="vertical-timeline-element--work"
+            contentStyle={{ background: 'linear-gradient(to right, #0B588F, #26AAE1)', color: '#fff', fontFamily: 'Inter, sans-serif', fontWeight: '600' }}
+            contentArrowStyle={{ borderRight: '7px solid #0B588F' }}
+            iconStyle={{ background: '#EB891B', color: '#fff', boxShadow: "0 0 0 4px #fb6d17, inset 0 2px 0 rgba(0, 0, 0, .04), 0 3px 0 4px rgba(0, 0, 0, .05)"}}
+            icon={
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
+                <text x="4" y="20" font-size="24" font-weight="semibold" fill="currentColor">4</text>
+              </svg>
+            } 
+          >
+            <h3 className="vertical-timeline-element-title">Pastikan semua data telah benar sebelum dikumpulkan</h3>
+          </VerticalTimelineElement>
+        </VerticalTimeline>
       </div>
     </div>
   );
