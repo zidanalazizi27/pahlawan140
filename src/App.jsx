@@ -2,6 +2,8 @@ import { Route, Routes, useNavigate } from "react-router-dom";
 import BackToTop from "./components/BackToTop";
 import Beranda from "./pages/beranda";
 import MyOffice from "./pages/myoffice";
+import Berita from "./pages/berita";
+import Profil from "./pages/profil";
 import AyoMagang from "./pages/ayomagang";
 import MasukAM from "./pages/masukam";
 import DaftarAM from "./pages/daftaram";
@@ -30,6 +32,14 @@ function App() {
           path="/myoffice"
           element={ <MyOffice />}
         />
+        <Route
+          path="/profil"
+          element={ <Profil />}
+        />
+        {/* <Route
+          path="/berita"
+          element={ <Berita />}
+        /> */}
       <Route
           path="/ayomagang"
           element={ <AyoMagang />}
