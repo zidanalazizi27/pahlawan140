@@ -6,7 +6,7 @@ const CarouselCustom = () => {
   const { width } = useWindowDimensions();
 
   const imgStyle = {
-    // height: width > 768 ? "100vh" : width > 480 ? "60vh" : "40vh",
+    height: width > 768 ? "100vh" : width > 480 ? "60vh" : "40vh",
     // width: "100vw",
   };
 
