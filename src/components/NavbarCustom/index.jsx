@@ -63,7 +63,7 @@ export default function NavbarCustom() {
         </NavbarBrand>
       </NavbarContent>
       <NavbarContent className="hidden gap-4 sm:flex" justify="end">
-      <Dropdown>
+        <Dropdown>
           <NavbarItem>
             <DropdownTrigger>
               <Button
@@ -89,18 +89,14 @@ export default function NavbarCustom() {
               base: "gap-4",
             }}
           >
-            <DropdownItem className="font-bold" key="berita">
-                <p className="font-semibold text-[14px] font-inter">
-                  <RouterLink to="/berita" className={getMenuClasses("Berita")}>
-                    Berita
-                  </RouterLink>
-                </p>
-            </DropdownItem>
             <DropdownItem className="font-bold" key="profil">
               <RouterLink to="/profil" className={getMenuClasses("Profil")}>
-              <p className="font-semibold text-[14px] font-inter">
-                Profil
-              </p>
+                <p className="font-semibold text-[14px] font-inter">Profil</p>
+              </RouterLink>
+            </DropdownItem>
+            <DropdownItem className="font-bold" key="berita">
+              <RouterLink to="/berita" className={getMenuClasses("Berita")}>
+                <p className="font-semibold text-[14px] font-inter">Berita</p>
               </RouterLink>
             </DropdownItem>
           </DropdownMenu>
@@ -137,7 +133,7 @@ export default function NavbarCustom() {
               </Button>
             </DropdownTrigger>
           </NavbarItem>
-        <DropdownMenu
+          <DropdownMenu
             aria-label="ACME features"
             className="w-[210px] font-inter text-pdarkblue"
             itemClasses={{
@@ -145,18 +141,16 @@ export default function NavbarCustom() {
             }}
           >
             <DropdownItem className="font-bold" key="berita">
-                <a href="https://rb.bps.go.id/">
-                <p className="font-semibold text-[14px] font-inter">
-                  BPS RI
-                </p>
+              <a href="https://rb.bps.go.id/">
+                <p className="font-semibold text-[14px] font-inter">BPS RI</p>
               </a>
             </DropdownItem>
             <DropdownItem className="font-bold" key="sobat">
               <p className="font-semibold text-[14px] font-inter">
-                  <RouterLink to="/" className={getMenuClasses("Berita")}>
-                    BPS Kabupaten Sidoarjo
-                  </RouterLink>
-                </p>
+                <RouterLink to="/" className={getMenuClasses("Berita")}>
+                  BPS Kabupaten Sidoarjo
+                </RouterLink>
+              </p>
             </DropdownItem>
           </DropdownMenu>
         </Dropdown>
@@ -208,7 +202,7 @@ export default function NavbarCustom() {
       </NavbarContent>
 
       <NavbarMenu>
-      <Dropdown>
+        <Dropdown>
           <NavbarItem>
             <DropdownTrigger>
               <Button
@@ -234,23 +228,19 @@ export default function NavbarCustom() {
               base: "gap-4",
             }}
           >
-            <DropdownItem className="font-bold" key="berita">
-                <p className="font-semibold text-[14px] font-inter">
-                  <RouterLink to="/berita" className={getMenuClasses("Berita")}>
-                    Berita
-                  </RouterLink>
-                </p>
-            </DropdownItem>
             <DropdownItem className="font-bold" key="profil">
               <RouterLink to="/profil" className={getMenuClasses("Profil")}>
-              <p className="font-semibold text-[14px] font-inter">
-                Profil
-              </p>
+                <p className="font-semibold text-[14px] font-inter">Profil</p>
+              </RouterLink>
+            </DropdownItem>
+            <DropdownItem className="font-bold" key="berita">
+              <RouterLink to="/berita" className={getMenuClasses("Berita")}>
+                <p className="font-semibold text-[14px] font-inter">Berita</p>
               </RouterLink>
             </DropdownItem>
           </DropdownMenu>
         </Dropdown>
-        
+
         <NavbarMenuItem className="lg:flex">
           <RouterLink to="/temanluki" className={getMenuClasses("Teman Luki")}>
             Teman Luki
@@ -278,7 +268,7 @@ export default function NavbarCustom() {
               </Button>
             </DropdownTrigger>
           </NavbarItem>
-        <DropdownMenu
+          <DropdownMenu
             aria-label="ACME features"
             className="w-[210px] font-inter text-pdarkblue"
             itemClasses={{
@@ -286,18 +276,16 @@ export default function NavbarCustom() {
             }}
           >
             <DropdownItem className="font-bold" key="berita">
-                <a href="https://rb.bps.go.id/">
-                <p className="font-semibold text-[14px] font-inter">
-                  BPS RI
-                </p>
+              <a href="https://rb.bps.go.id/">
+                <p className="font-semibold text-[14px] font-inter">BPS RI</p>
               </a>
             </DropdownItem>
             <DropdownItem className="font-bold" key="sobat">
               <p className="font-semibold text-[14px] font-inter">
-                  <RouterLink to="/" className={getMenuClasses("Berita")}>
-                    BPS Kabupaten Sidoarjo
-                  </RouterLink>
-                </p>
+                <RouterLink to="/" className={getMenuClasses("Berita")}>
+                  BPS Kabupaten Sidoarjo
+                </RouterLink>
+              </p>
             </DropdownItem>
           </DropdownMenu>
         </Dropdown>

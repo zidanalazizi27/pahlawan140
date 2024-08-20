@@ -18,7 +18,7 @@ const CarouselCustom = () => {
         arrows
         infinite={true}
         autoplay
-        autoplaySpeed={3000}
+        autoplaySpeed={2500}
         className="overflow-hidden"
       >
         <div>

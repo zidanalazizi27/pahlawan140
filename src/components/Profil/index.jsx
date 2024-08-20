@@ -71,6 +71,18 @@ export default function ProfilBPS() {
     ),
     "Core Value": (
       <div className="text-[12px]">
+        <img
+          src="/image/berakhlak.png"
+          alt="motto"
+          className="custom-image"
+          style={{
+            display: "block",
+            margin: "auto",
+            width: "300px",
+            height: "auto",
+          }} // Atur ukuran sesuai kebutuhan
+        />
+        <br />
         <p className="text-justify text-slate-600">
           BerAKHLAK dan employer branding “Bangga Melayani Bangsa” menjadi nilai
           dasar yang dapat dirasakan langsung oleh masyarakat dan muncul dalam

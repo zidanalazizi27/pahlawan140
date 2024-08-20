@@ -79,13 +79,13 @@ export default function Footer() {
           </div>
         </a>
 
-        <p className="z-40 mt-5 ml-6 text-xs whitespace-pre-wrap w-42 md:text-left text-pdarkblue">
+        <p className="z-40 mt-5 ml-6 text-base whitespace-pre-wrap w-42 md:text-left text-pdarkblue">
           <b>
-            <span className="mr-2">&#169;</span>2024 BPS Kabupaten Sidoarjo 
+            <span className="mr-2">&#169;</span>2024 BPS Kabupaten Sidoarjo
           </b>
         </p>
       </div>
-      <div className="grid grid-cols-1 gap-0 mx-auto md:grid-cols-2 md:w-9/12 text-xs">
+      <div className="grid grid-cols-1 gap-0 mx-auto md:grid-cols-2 md:w-9/12 text-sm">
         <div>
           <FooterTitle title="Media Sosial" />
           <FooterList items={medSos} />

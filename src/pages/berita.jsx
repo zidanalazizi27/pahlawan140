@@ -1,17 +1,17 @@
 import React, { useEffect } from "react";
 import "aos/dist/aos.css";
 import NavbarCustom from "../components/NavbarCustom";
-import ProfilBPS from "../components/Profil";
+import Berita from "../components/Berita";
 import Footer from "../components/Footer/Footer";
 
 
-const Berita = () => {
+const News = () => {
   return (
     <>
       <NavbarCustom />
-      <div className="px-[10%]">
+      <div className="px-[10%] mt-[15vh]">
         <div data-aos="fade-up">
-          <ProfilBPS />
+          <Berita />
         </div>
       </div>
       <Footer />
@@ -19,4 +19,4 @@ const Berita = () => {
   );
 };
 
-export default Berita;
+export default News;

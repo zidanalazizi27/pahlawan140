@@ -14,7 +14,7 @@ import Konfirmasi from "./pages/konfirmasimagang";
 import RuangBaca from "./pages/ruangbaca";
 import TemanLuki from "./pages/temanluki";
 import Aduan from "./pages/aduan";
-import Login from './pages/login';
+import Login from "./pages/login";
 import { NextUIProvider } from "@nextui-org/react";
 
 function App() {
@@ -22,89 +22,56 @@ function App() {
 
   return (
     <NextUIProvider navigate={navigate}>
-    <div classname="flex flex-col w-full">
-      <Routes>
-        <Route
-          path="/"
-          element={ <Beranda /> }
-        />
-        <Route
-          path="/myoffice"
-          element={ <MyOffice />}
-        />
-        <Route
-          path="/profil"
-          element={ <Profil />}
-        />
-        {/* <Route
-          path="/berita"
-          element={ <Berita />}
-        /> */}
-      <Route
-          path="/ayomagang"
-          element={ <AyoMagang />}
-      />
-      <Route
-          path="/masukam"
-          element={ <MasukAM />}
-      />
-      <Route
-          path="/daftaram"
-          element={ <DaftarAM />}
-      />
-      <Route
-          path="/berandamasuk"
-          element={ <BerandaMasuk />}
-      />
-      <Route
-          path="/berhasildaftar"
-          element={ <BerhasilDaftar />}
-      />
-      <Route
-          path="/formulir"
-          element={ <Formulir />}
-      />
-      <Route
-          path="/konfirmasi"
-          element={ <Konfirmasi />}
-      />
-      <Route
-          path="/ruangbaca"
-          element={
-            <>
-              <RuangBaca />
-              <BackToTop />
-            </>
-          }
-        />
-        <Route
-          path="/temanluki"
-          element={
-            <>
-              <TemanLuki />
-              <BackToTop />
-            </>
-          }
-        />
-        <Route
-          path="/aduan"
-          element={
-            <>
-              <Aduan />
-              <BackToTop />
-            </>
-          }
-        />
-        <Route
-          path="/login"
-          element={
-            <>
-              <Login />
-            </>
-          }
-        />
-      </Routes>
-      <BackToTop />
+      <div classname="flex flex-col w-full">
+        <Routes>
+          <Route path="/" element={<Beranda />} />
+          <Route path="/myoffice" element={<MyOffice />} />
+          <Route path="/profil" element={<Profil />} />
+          <Route path="/berita" element={<Berita />} />
+          <Route path="/ayomagang" element={<AyoMagang />} />
+          <Route path="/masukam" element={<MasukAM />} />
+          <Route path="/daftaram" element={<DaftarAM />} />
+          <Route path="/berandamasuk" element={<BerandaMasuk />} />
+          <Route path="/berhasildaftar" element={<BerhasilDaftar />} />
+          <Route path="/formulir" element={<Formulir />} />
+          <Route path="/konfirmasi" element={<Konfirmasi />} />
+          <Route
+            path="/ruangbaca"
+            element={
+              <>
+                <RuangBaca />
+                <BackToTop />
+              </>
+            }
+          />
+          <Route
+            path="/temanluki"
+            element={
+              <>
+                <TemanLuki />
+                <BackToTop />
+              </>
+            }
+          />
+          <Route
+            path="/aduan"
+            element={
+              <>
+                <Aduan />
+                <BackToTop />
+              </>
+            }
+          />
+          <Route
+            path="/login"
+            element={
+              <>
+                <Login />
+              </>
+            }
+          />
+        </Routes>
+        <BackToTop />
       </div>
     </NextUIProvider>
   );
