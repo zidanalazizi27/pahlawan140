@@ -50,7 +50,7 @@ const LayananSection = () => {
       title: "Desa Cantik",
       description:
         "Program percepatan dari Badan Pusat Statistik dalam lingkup wilayah Desa/Kelurahan/Nagari/Wilayah setingkatnya untuk meningkatkan kompetensi aparatur Desa dalam mengelola dan memanfaatkan data Desa sehingga Perencanaan Pembangunan Desa menjadi lebih tepat sasaran.",
-      link: "#",
+      link: "https://desa-cantik-sda.vercel.app",
     },
     {
       bgColor: "#EB891B",

@@ -124,10 +124,9 @@ const RuangBaca = () => {
               key={index}
               className="lg:h-[270px] xl:h-[300px] 2xl:h-[270px] px-4 my-10"
             >
-              <Link to={card.link}>
+              <Link to={card.link} target="_blank" rel="noopener noreferrer">
                 <Image
                   isBlurred
-                  // isZoomed
                   width={180}
                   height={240}
                   src={card.src}
