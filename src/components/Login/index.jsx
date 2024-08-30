@@ -13,8 +13,14 @@ export default function Login() {
 
   const userAccount = [
     {
-      username: "pah.lawan.140",
-      password: "3515.140",
+      username: "hero140",
+      password: "3515_140",
+      role: "admin", // Role for admin
+    },
+    {
+      username: "user140",
+      password: "pahlawan",
+      role: "user", // Role for user
     },
   ];
 
@@ -24,9 +30,9 @@ export default function Login() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-
+  
     const user = userAccount.find((user) => user.username === username);
-
+  
     if (!user) {
       setError({ username: "Username tidak terdaftar", password: "" });
     } else if (password.length < 8) {
@@ -39,9 +45,17 @@ export default function Login() {
     } else {
       setError({ username: "", password: "" });
       localStorage.setItem("loginSuccess", "true");
-      navigate("/myoffice"); // Redirect to myoffice route
+      localStorage.setItem("userRole", user.role); // Store user role
+  
+      // Redirect based on the user's role
+      if (user.role === "admin") {
+        navigate("/dashboard");
+      } else if (user.role === "user") {
+        navigate("/myoffice");
+      }
     }
   };
+  
 
   return (
     <div

@@ -16,17 +16,26 @@ import {
 } from "@nextui-org/react";
 import { ChevronDown } from "./Icon.jsx";
 import { useLocation, Link as RouterLink } from "react-router-dom";
+import { IoLogIn, IoLogOut } from "react-icons/io5";
 
 export default function NavbarCustom() {
   const location = useLocation();
   const [activeMenu, setActiveMenu] = useState(location.pathname);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [userRole, setUserRole] = useState("");
+
   const icons = {
     chevron: <ChevronDown fill="currentColor" size={16} />,
   };
 
   useEffect(() => {
     const path = location.pathname;
+    const loginSuccess = localStorage.getItem("loginSuccess");
+    const role = localStorage.getItem("userRole");
+    setIsLoggedIn(loginSuccess === "true");
+    setUserRole(role);
+
     if (path === "/") setActiveMenu("Beranda");
     else if (path === "/myoffice") setActiveMenu("MyOffice");
     else if (path === "/temanluki") setActiveMenu("Teman Luki");
@@ -199,7 +208,17 @@ export default function NavbarCustom() {
             MyOffice
           </RouterLink>
         </NavbarItem>
+        <NavbarItem className="hidden lg:flex">
+          <RouterLink
+            to={isLoggedIn && userRole === "admin" ? "/dashboard" : "/login"}
+            className={getMenuClasses(isLoggedIn ? "Logout" : "Login")}
+          >
+            {isLoggedIn ? <IoLogOut size={36} /> : <IoLogIn size={36} />}
+          </RouterLink>
+        </NavbarItem>
       </NavbarContent>
+
+      {/* small screen */}
 
       <NavbarMenu>
         <Dropdown>
@@ -339,6 +358,14 @@ export default function NavbarCustom() {
             MyOffice
           </RouterLink>
         </NavbarMenuItem>
+        <NavbarItem className="hidden lg:flex">
+          <RouterLink
+            to={isLoggedIn && userRole === "admin" ? "/dashboard" : "/login"}
+            className={getMenuClasses(isLoggedIn ? "Logout" : "Login")}
+          >
+            {isLoggedIn ? <IoLogOut size={36} /> : <IoLogIn size={36} />}
+          </RouterLink>
+        </NavbarItem>
       </NavbarMenu>
     </Navbar>
   );
