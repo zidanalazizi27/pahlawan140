@@ -76,7 +76,7 @@ const Daftar = () => {
           />
           <Input
             label="Nomor Telepon (Whatsapp Aktif)"
-            placeholder="Cth: 085608389667"
+            placeholder="Cth: 0856xxxxxxx"
             type="tel"
             classNames={{
               label: "text-black text-base md:text-lg mt-[5px] font-nunito font-bold",
