@@ -6,9 +6,9 @@ const BerhasilDaftar = () => {
   return (
     <div
       className="relative flex items-center justify-center min-h-screen"
-      style={{ backgroundImage: "url('/image/bg_am.png')", backgroundSize: 'cover' }}
+      style={{ backgroundImage: "url('/image/bg.svg')", backgroundSize: 'cover' }}
     >
-      <div className="relative z-10 flex flex-col items-center justify-center w-full max-w-md p-8 mt-10 bg-white shadow-md rounded-xl md:max-w-lg" style={{ marginTop: '120px', marginBottom: '60px' }}>
+      <div className="relative z-10 flex flex-col items-center justify-center w-full max-w-md p-8 mt-10 bg-white shadow-md rounded-xl md:max-w-lg" style={{ marginTop: '120px'}}>
         <div className="flex flex-col items-center mb-8">
           <img
             src="/image/logo_am.png"

@@ -88,8 +88,10 @@ export default function NavbarCustom() {
             onClick={handleLogoClick}
           />
           </div>
-          <ul tabIndex={4} className="dropdown-content menu bg-base-100 rounded-box z-[1] w-21 p-1 shadow" href="/ayomagang" >
-            <li className="text-pdarkblue font-assistant font-semibold"><a>Keluar</a></li>
+          <ul tabIndex={4} className="dropdown-content menu bg-base-100 rounded-box z-[1] w-21 p-1 shadow">
+            <li className="text-pdarkblue font-assistant font-semibold">
+              <a href="/ayomagang">Keluar</a>
+            </li>
           </ul>
         </div>
         </NavbarItem>

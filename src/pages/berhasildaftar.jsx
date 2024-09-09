@@ -17,7 +17,6 @@ const AyoMagang = () => {
     <>
       <NavbarCustom />
       <Daftar />
-      <Footer />
     </>
   );
 };
