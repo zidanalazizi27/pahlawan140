@@ -56,7 +56,7 @@ const statusColorMap = {
 };
 
 function Menu() {
-  const [errors, setErrors] = useState({});
+  const [submenuCount, setSubmenuCount] = useState(0);
 
   const renderCell = React.useCallback((item, columnKey) => {
     const cellValue = item[columnKey];
@@ -105,62 +105,85 @@ function Menu() {
       span: 4,
     },
     wrapperCol: {
-      span: 14,
+      span: 20,
     },
   };
 
   const buttonItemLayout = {
     wrapperCol: {
-      span: 14,
+      span: 24,
       offset: 4,
     },
+  };
+
+  const handleAddSubmenu = () => {
+    if (submenuCount >= 0) {
+      setSubmenuCount(submenuCount + 1);
+    }
+  };
+
+  const handleRemoveSubmenu = () => {
+    if (submenuCount > 0) {
+      setSubmenuCount(submenuCount - 1);
+    }
   };
 
   return (
     <AdminLayout>
       <div className="bg-grayCustom min-h-screen p-10 mt-0 mx-auto">
-        <h5 className="text-base text-pdarkblue font-semibold">
+        <h7 className="text-sm font-semibold text-pdarkblue">
           Admin > Pahlawan140 > Menu Navbar
-        </h5>
-        <div className="mt-5 bg-white rounded-2xl p-5">
+        </h7>
+        <div className="mt-5 bg-white rounded-2xl p-10">
           <div className="text-center mb-4">
-            <h2 className="text-lg font-semibold text-pdarkblue">
+            <h2 className="text-lg font-semibold text-pdarkblue mb-4">
               Tambah Menu
             </h2>
           </div>
           <Form
             {...formItemLayout}
             layout="horizontal"
-            style={{
-              width: '100%',
-            }}
+            labelAlign="left"
+            style={{ width: "100%" }}
           >
             <Form.Item label="Nama Menu">
               <Input placeholder="" />
             </Form.Item>
-            <Form.Item label="Link">
+            <Form.Item label="Link Menu">
               <Input placeholder="" />
             </Form.Item>
+
+            {Array.from({ length: submenuCount }).map((_, index) => (
+              <React.Fragment key={index}>
+                <Form.Item label={`Nama Submenu ${index + 1}`}>
+                  <Input placeholder="" />
+                </Form.Item>
+                <Form.Item label={`Link Submenu ${index + 1}`}>
+                  <Input placeholder="" />
+                </Form.Item>
+              </React.Fragment>
+            ))}
+
             <Form.Item {...buttonItemLayout}>
-              {/* Flexbox container for Submenu and buttons */}
               <div className="flex items-center justify-end">
-                <h7 className="text-lg font-semibold text-pdarkblue">Submenu:</h7>
+                <p className="font-semibold text-pdarkblue">Submenu :</p>
                 <Button
                   type="primary"
                   shape="circle"
                   icon={<MinusOutlined />}
+                  onClick={handleRemoveSubmenu}
+                  disabled={submenuCount === 0}
                   style={{ marginLeft: 8 }}
                 />
                 <Button
                   type="primary"
                   shape="circle"
                   icon={<PlusOutlined />}
+                  onClick={handleAddSubmenu}
+                  // disabled={submenuCount === 3}
                   style={{ marginLeft: 8 }}
                 />
-                <Button
-                  type="primary"
-                  style={{ marginLeft: 20 }}
-                >
+                <Button type="primary" style={{ marginLeft: 16 }}>
                   Submit
                 </Button>
               </div>

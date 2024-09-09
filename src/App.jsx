@@ -17,9 +17,9 @@ import Aduan from "./pages/aduan";
 import Login from "./pages/login";
 import DashboardAdmin from "./pages/admin/dashboard";
 import MenuAdmin from "./pages/admin/menu";
-// import BerandaAdmin from './pages/admin/beranda';
-// import TemanLukiAdmin from './pages/admin/temanluki';
-// import RuangBacaAdmin from './pages/admin/ruangbaca';
+import BerandaAdmin from './pages/admin/beranda';
+import TemanLukiAdmin from './pages/admin/temanluki';
+import RuangBacaAdmin from './pages/admin/ruangbaca';
 import { NextUIProvider } from "@nextui-org/react";
 import PrivateRoute from "./components/PrivateRoute";
 import RoleBasedRoute from "./components/RoleBasedRoute";
@@ -49,8 +49,13 @@ function App() {
           <Route path="/berhasildaftar" element={<BerhasilDaftar />} />
           <Route path="/formulir" element={<Formulir />} />
           <Route path="/konfirmasi" element={<Konfirmasi />} />
+
           <Route path="/dashboard" element={<DashboardAdmin />} />
           <Route path="/menu" element={<MenuAdmin />} />
+          <Route path="/beranda_adm" element={<BerandaAdmin />} />
+          <Route path="/temanluki_adm" element={<TemanLukiAdmin />} />
+          <Route path="/ruangbaca_adm" element={<RuangBacaAdmin />} />
+          
           <Route
             path="/ruangbaca"
             element={

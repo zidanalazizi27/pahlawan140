@@ -26,10 +26,10 @@ function AdminLayout({ children }) {
       to: "",
       submenu: [
         { text: "Menu", to: "/menu", icon: <WidgetsRoundedIcon/>},
-        { text: "Beranda", to: "/",  icon: <HomeRoundedIcon />  },
-        { text: "Teman Luki", to: "/",  icon: <MonitorHeartRoundedIcon />  },
-        { text: "Ruang Baca", to: "/",  icon: <MenuBookRoundedIcon />  },
-        { text: "My Office", to: "/",  icon: <PrintRoundedIcon />  }
+        { text: "Beranda", to: "/beranda_adm",  icon: <HomeRoundedIcon />  },
+        { text: "Teman Luki", to: "/temanluki_adm",  icon: <MonitorHeartRoundedIcon />  },
+        { text: "Ruang Baca", to: "/ruangbaca_adm",  icon: <MenuBookRoundedIcon />  },
+        { text: "My Office", to: "/myoffice_adm",  icon: <PrintRoundedIcon />  }
       ]
     },
     {
