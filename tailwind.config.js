@@ -16,6 +16,12 @@ module.exports = {
         porange: "#EB891B",
         pgreen: "#68B92E",
         base: "#EEF0F2",
+
+        ternaryBlue: '#0A3357',
+        primaryBlue:'#228be6',
+        secondaryBlue: '#D7EAFB',
+        primaryOrange: '#e67e22',
+        grayCustom: '#eef0f2',
       },
       fontFamily: {
         inter: ["Inter", "sans-serif"],
@@ -34,5 +40,8 @@ module.exports = {
     },
   },
   // darkMode: "class",
-  plugins: [nextui(), require('daisyui')], 
+  plugins: [
+    nextui(),
+    require('daisyui'),
+  ],
 };

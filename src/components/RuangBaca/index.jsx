@@ -23,58 +23,52 @@ const RuangBaca = () => {
   // Definisikan array data untuk setiap card
   const cardsData = [
     {
-      src: "https://cdnagesdb.com/images/booksimages/39150A76C47752ED3B39788AA04B2D4D.webp",
-      link: "https://z-lib.id/book/sql-in-7-days",
-      alt: "SQL in 7 Days",
-      title: "SQL",
+      src: "/image/Rbc/m1.png",
+      link: "https://drive.google.com/file/d/1znq7qQSLPd4RYFDMkdTxi-7CDoZKXQfb/view?usp=drive_link",
+      alt: "Dasar-Dasar Statistik 1",
+      title: "Modul 1",
     },
     {
-      src: "https://cdnagesdb.com/images/booksimages/B732B9F58CA83C21099287BF213B041F.webp",
-      link: "https://z-lib.id/book/data-science-in-applications",
-      alt: "Data Science in Applications",
-      title: "Data Science",
+      src: "/image/Rbc/m2.png",
+      link: "https://drive.google.com/file/d/1DcUk97KKIj-t6H-d5VNhBJxd8HzhQJog/view?usp=drive_link",
+      alt: "Dasar-Dasar Statistik 2",
+      title: "Modul 2",
     },
     {
-      src: "https://isbncoverdb.com/images/book-cover-survey-methodology-wiley-series-in-survey-methodology.webp",
-      link: "https://z-lib.id/book/survey-methodology-wiley-series-in-survey-methodology",
+      src: "/image/Rbc/m3.png",
+      link: "https://drive.google.com/file/d/1h9wFhxLsLc_xKp_JJ-RQjgx3x4kLra5L/view?usp=drive_link",
+      alt: "Dasar-Dasar Statistik 3",
+      title: "Modul 3",
+    },
+    {
+      src: "/image/Rbc/m4.png",
+      link: "https://drive.google.com/file/d/13xDM-bzLDEqOcjxnWRJokBgp95BmVXqJ/view?usp=drive_link",
+      alt: "Dasar-Dasar Statistik 4",
+      title: "Modul 4",
+    },
+    {
+      src: "/image/Rbc/inf.png",
+      link: "https://drive.google.com/file/d/1W01twx43GCfbx4maV-9Memav0IfdV7G0/view?usp=drive_link",
+      alt: "Materi Infografis",
+      title: "Materi Infografis",
+    },
+    {
+      src: "/image/Rbc/leader.png",
+      link: "https://drive.google.com/file/d/1yjkuiN7wAkWKQno4HZTV_0bI6M7e90w7/view?usp=drive_link",
       alt: "Survey Methodology",
-      title: "Survey Methodology",
+      title: "Mind Setting",
     },
     {
-      src: "https://cdnagesdb.com/images/booksimages/E58343194F2FC58BFE4456543ADFACA9.webp",
-      link: "https://z-lib.id/book/32686599-regression-analysis-2",
-      alt: "Regression Analysis",
-      title: "Regression Analysis",
+      src: "/image/Rbc/pkl1.png",
+      link: "https://drive.google.com/file/d/1KX3kH-UdZIWogbuwLCXTrXE-of5g_Cvu/view?usp=drive_link",
+      alt: "Makalah PKL 1",
+      title: "Makalah PKL 1",
     },
     {
-      src: "https://ia800408.us.archive.org/view_archive.php?archive=/9/items/olcovers111/olcovers111-L.zip&file=1110441-L.jpg",
-      link: "hhttps://openlibrary.org/books/OL7338366M/Applied_Multivariate_Statistical_Analysis_(6th_Edition)",
-      alt: "Applied Multivariate Statistical Analysis (6th Edition)",
-      title: "Multivariate Statistical Analysis",
-    },
-    {
-      src: "https://isbncoverdb.com/images/book-cover-research-methodology-for-postgraduate-students.webp",
-      link: "https://z-lib.id/book/research-methodology-for-postgraduate-students",
-      alt: "Research Methodology for Postgraduate Students",
-      title: "Research Methodology",
-    },
-    {
-      src: "https://cdnagesdb.com/images/booksimages/BE49142FF4A73B36E236F9D84043D720.webp",
-      link: "https://z-lib.id/book/data-mining-and-predictive-analytics-for-business",
-      alt: "Data Mining and Predictive Analytics for Business Decisions",
-      title: "Data Mining",
-    },
-    {
-      src: "https://cdnagesdb.com/images/booksimages/A2721A941A735E0628D0B5ED731D91D0.webp",
-      link: "https://z-lib.id/book/javascript-for-modern-web-development-1",
-      alt: "JavaScript for Modern Web Development: Building a Web Application Using HTML, CSS, and Javascript",
-      title: "JavaScript",
-    },
-    {
-      src: "https://m.media-amazon.com/images/I/A1uf0Ehs-yL._AC_UF1000,1000_QL80_.jpg",
-      link: "https://unstats.un.org/unsd/nationalaccount/docs/sna2008.pdf",
-      alt: "System of National Accounts 2008",
-      title: "SNA 2008",
+      src: "/image/Rbc/pkl2.png",
+      link: "https://drive.google.com/file/d/1_TOhyT0RCTTKK4J_HqyEH8siwQBCHTqG/view?usp=drive_link",
+      alt: "Makalah PKL 2",
+      title: "Makalah PKL 2",
     },
   ];
 
@@ -130,10 +124,9 @@ const RuangBaca = () => {
               key={index}
               className="lg:h-[270px] xl:h-[300px] 2xl:h-[270px] px-4 my-10"
             >
-              <Link to={card.link}>
+              <Link to={card.link} target="_blank" rel="noopener noreferrer">
                 <Image
                   isBlurred
-                  // isZoomed
                   width={180}
                   height={240}
                   src={card.src}
