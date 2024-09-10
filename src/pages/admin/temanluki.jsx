@@ -112,9 +112,9 @@ const TLk = () => {
   return (
     <AdminLayout>
       <div className="bg-grayCustom min-h-screen p-10 mt-0 mx-auto">
-        <h7 className="text-sm font-semibold text-pdarkblue">
+        <h6 className="text-sm font-semibold text-pdarkblue">
           Admin > Pahlawan140 > Teman Luki
-        </h7>
+        </h6>
         <div className="mt-5 flex flex-col md:flex-row bg-white rounded-2xl p-10 justify-between space-y-5 md:space-y-0">
           <div className="w-full flex justify-center items-center flex-col">
             <h2 className="text-lg font-semibold text-pdarkblue mb-4">

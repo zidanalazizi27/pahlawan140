@@ -9,7 +9,7 @@ import {
   TableCell,
   Tooltip,
   Button as NextUIButton,
-  Modal,
+  Modal as NextUIModal,
   ModalContent,
   ModalHeader,
   ModalBody,
@@ -19,13 +19,21 @@ import {
 import { EditIcon } from "../../components/Icon/EditIcon";
 import { DeleteIcon } from "../../components/Icon/DeleteIcon";
 import { EyeIcon } from "../../components/Icon/EyeIcon";
-import { Form, Input } from "antd";
+import { Form, Input, Upload, Modal as AntModal } from "antd";
 import { PlusOutlined } from "@ant-design/icons";
+
+const getBase64 = (file) =>
+  new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = () => resolve(reader.result);
+    reader.onerror = (error) => reject(error);
+  });
 
 const columns = [
   { name: "Urutan", uid: "urut_rbc" },
   { name: "Judul", uid: "judul_rbc" },
-  { name: "Gambar", uid: "gambar_rbc" },
+  { name: "Cover", uid: "gambar_rbc" },
   { name: "Aksi", uid: "aksi_rbc" },
 ];
 
@@ -34,22 +42,38 @@ const data_rbc = [
     id_rbc: 1,
     urut_rbc: "1",
     judul_rbc: "Monev OPD",
-    gambar_rbc: "https://example.com/image1.jpg", // Add valid image URL
+    gambar_rbc: "https://example.com/image1.jpg", 
   },
   {
     id_rbc: 2,
     urut_rbc: "2",
     judul_rbc: "Monitoring Sensus dan Survei",
-    gambar_rbc: "https://example.com/image2.jpg", // Add valid image URL
+    gambar_rbc: "https://example.com/image2.jpg", 
   },
 ];
 
 const RBc = () => {
   const [modalActionRBc, setModalActionRBc] = useState(null);
   const [selectedItemRBc, setSelectedItemRBc] = useState(null);
+  const [fileList, setFileList] = useState([]);
+  const [previewVisible, setPreviewVisible] = useState(false);
+  const [previewImage, setPreviewImage] = useState('');
+  const [previewTitle, setPreviewTitle] = useState('');
 
-  const { isOpen: isOpenRBc, onOpen: onOpenRBc, onOpenChange: onOpenChangeRBc } =
-    useDisclosure();
+  const { isOpen: isOpenRBc, onOpen: onOpenRBc, onOpenChange: onOpenChangeRBc } = useDisclosure();
+
+  const handlePreview = async (file) => {
+    if (!file.url && !file.preview) {
+      file.preview = await getBase64(file.originFileObj);
+    }
+    setPreviewImage(file.url || file.preview);
+    setPreviewTitle(file.name || file.url.substring(file.url.lastIndexOf('/') + 1));
+    setPreviewVisible(true);
+  };
+
+  const handleChange = ({ fileList: newFileList }) => setFileList(newFileList);
+
+  const handleCancelPreview = () => setPreviewVisible(false);
 
   const openModalRBc = (action, item) => {
     setModalActionRBc(action);
@@ -104,12 +128,19 @@ const RBc = () => {
     },
   };
 
+  const uploadButton = (
+    <div>
+      <PlusOutlined />
+      <div style={{ marginTop: 8 }}>Upload</div>
+    </div>
+  );
+
   return (
     <AdminLayout>
       <div className="bg-grayCustom min-h-screen p-10 mt-0 mx-auto">
-        <h7 className="text-sm font-semibold text-pdarkblue">
+        <h6 className="text-sm font-semibold text-pdarkblue">
           Admin > Pahlawan140 > Ruang Baca
-        </h7>
+        </h6>
         <div className="mt-5 flex flex-col md:flex-row bg-white rounded-2xl p-10 justify-between space-y-5 md:space-y-0">
           <div className="w-full flex justify-center items-center flex-col">
             <h2 className="text-lg font-semibold text-pdarkblue mb-4">
@@ -119,17 +150,16 @@ const RBc = () => {
             <NextUIButton
               size="sm"
               color="primary"
-              onPress={() => openModalRBc("add", null)} // Open modal to add new item
+              onPress={() => openModalRBc("add", null)}
             >
               Tambah <PlusOutlined />
             </NextUIButton>
 
-            {/* Modal for Ruang Baca */}
-            <Modal
+            <NextUIModal
               size="xl"
               backdrop="opaque"
-              isOpen={isOpenRBc} // Ensure this controls modal visibility
-              onOpenChange={onOpenChangeRBc} // Fix closing behavior
+              isOpen={isOpenRBc}
+              onOpenChange={onOpenChangeRBc}
               classNames={{
                 backdrop: "transparent",
               }}
@@ -163,12 +193,16 @@ const RBc = () => {
                             disabled={modalActionRBc === "view"}
                           />
                         </Form.Item>
-                        <Form.Item label="Gambar">
-                          <Input
-                            placeholder="Masukkan deskripsi gambar"
-                            defaultValue={selectedItemRBc?.gambar_rbc}
-                            disabled={modalActionRBc === "view"}
-                          />
+                        <Form.Item label="Cover">
+                          <Upload
+                            listType="picture-card"
+                            fileList={fileList}
+                            onPreview={handlePreview}
+                            onChange={handleChange}
+                            beforeUpload={() => false} // Prevent automatic upload
+                          >
+                            {fileList.length >= 1 ? null : uploadButton}
+                          </Upload>
                         </Form.Item>
                         <Form.Item label="Link">
                           <Input
@@ -195,7 +229,18 @@ const RBc = () => {
                   </>
                 )}
               </ModalContent>
-            </Modal>
+            </NextUIModal>
+
+            {/* Preview Modal for Image */}
+            <AntModal
+              visible={previewVisible}
+              title={previewTitle}
+              footer={null}
+              onCancel={handleCancelPreview}
+            >
+              <img alt="preview" style={{ width: '100%' }} src={previewImage} />
+            </AntModal>
+
             <Table aria-label="Menu table with custom cells" shadow="none">
               <TableHeader columns={columns}>
                 {(column) => (

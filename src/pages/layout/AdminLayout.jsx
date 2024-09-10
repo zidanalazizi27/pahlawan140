@@ -35,7 +35,7 @@ function AdminLayout({ children }) {
     {
       icon: <Diversity3RoundedIcon />,
       text: "Ayo Magang",
-      to: "/user",
+      to: "/ayomagang_adm",
       submenu: []
     },
     {

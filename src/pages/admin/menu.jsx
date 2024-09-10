@@ -131,9 +131,9 @@ function Menu() {
   return (
     <AdminLayout>
       <div className="bg-grayCustom min-h-screen p-10 mt-0 mx-auto">
-        <h7 className="text-sm font-semibold text-pdarkblue">
+        <h6 className="text-sm font-semibold text-pdarkblue">
           Admin > Pahlawan140 > Menu Navbar
-        </h7>
+        </h6>
         <div className="mt-5 bg-white rounded-2xl p-10">
           <div className="text-center mb-4">
             <h2 className="text-lg font-semibold text-pdarkblue mb-4">

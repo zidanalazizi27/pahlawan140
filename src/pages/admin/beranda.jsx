@@ -89,7 +89,6 @@ function BerandaAdmin() {
     },
     {
       uid: "-xxx",
-      percent: 50,
       name: "image.png",
       status: "uploading",
       url: "https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png",
@@ -260,13 +259,42 @@ function BerandaAdmin() {
   return (
     <AdminLayout>
       <div className="bg-grayCustom min-h-screen p-10 mt-0 mx-auto">
-        <h7 className="text-sm font-semibold text-pdarkblue">
+        <h6 className="text-sm font-semibold text-pdarkblue">
           Admin > Pahlawan140 > Beranda
-        </h7>
+        </h6>
         <div className="mt-5 flex flex-col md:flex-row bg-white rounded-2xl p-10 justify-between space-y-5 md:space-y-0">
           <div className="w-full flex justify-center items-center flex-col">
             <h2 className="text-lg font-semibold text-pdarkblue mb-4">
-              Pengaturan Carousel
+              Galeri Profil Pejabat
+            </h2>
+            <Upload
+              action="https://660d2bd96ddfa2943b33731c.mockapi.io/api/upload"
+              listType="picture-card"
+              fileList={fileList}
+              onPreview={handlePreview}
+              onChange={handleChange}
+            >
+              {fileList.length >= 8 ? null : uploadButton}
+            </Upload>
+            {previewImage && (
+              <Image
+                wrapperStyle={{
+                  display: "none",
+                }}
+                preview={{
+                  visible: previewOpen,
+                  onVisibleChange: (visible) => setPreviewOpen(visible),
+                  afterOpenChange: (visible) => !visible && setPreviewImage(""),
+                }}
+                src={previewImage}
+              />
+            )}
+          </div>
+        </div>
+        <div className="mt-5 flex flex-col md:flex-row bg-white rounded-2xl p-10 justify-between space-y-5 md:space-y-0">
+          <div className="w-full flex justify-center items-center flex-col">
+            <h2 className="text-lg font-semibold text-pdarkblue mb-4">
+              Galeri Carousel
             </h2>
             <Upload
               action="https://660d2bd96ddfa2943b33731c.mockapi.io/api/upload"
@@ -523,7 +551,7 @@ function BerandaAdmin() {
         <div className="mt-5 flex flex-col md:flex-row bg-white rounded-2xl p-10 justify-between space-y-5 md:space-y-0">
           <div className="w-full flex justify-center items-center flex-col">
             <h2 className="text-lg font-semibold text-pdarkblue mb-4">
-              Pengaturan Penghargaan
+              Daftar Penghargaan
             </h2>
             <Upload
               action="https://660d2bd96ddfa2943b33731c.mockapi.io/api/upload"
