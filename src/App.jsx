@@ -20,6 +20,8 @@ import MenuAdmin from "./pages/admin/menu";
 import BerandaAdmin from './pages/admin/beranda';
 import TemanLukiAdmin from './pages/admin/temanluki';
 import RuangBacaAdmin from './pages/admin/ruangbaca';
+import MyOfficeAdmin from './pages/admin/myoffice';
+import AyoMagangAdmin from './pages/admin/ayomagang';
 import { NextUIProvider } from "@nextui-org/react";
 import PrivateRoute from "./components/PrivateRoute";
 import RoleBasedRoute from "./components/RoleBasedRoute";
@@ -55,6 +57,8 @@ function App() {
           <Route path="/beranda_adm" element={<BerandaAdmin />} />
           <Route path="/temanluki_adm" element={<TemanLukiAdmin />} />
           <Route path="/ruangbaca_adm" element={<RuangBacaAdmin />} />
+          <Route path="/myoffice_adm" element={<MyOfficeAdmin />} />
+          <Route path="/ayomagang_adm" element={<AyoMagangAdmin />} />
           
           <Route
             path="/ruangbaca"
