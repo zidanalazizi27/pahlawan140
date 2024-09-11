@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import NavbarCustom from "../components/NavbarCustom";
-import Aduan from "../components/ZIRB";
+import ZIRB from "../components/ZIRB";
 import Footer from "../components/Footer/Footer";
 
 const Adu = () => {

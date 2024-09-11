@@ -156,7 +156,7 @@ export default function NavbarCustom() {
             </DropdownItem>
             <DropdownItem className="font-bold" key="sobat">
               <p className="font-semibold text-[14px] font-inter">
-                <RouterLink to="/" className={getMenuClasses("Berita")}>
+                <RouterLink to="/zi-rb" className={getMenuClasses("Berita")}>
                   BPS Kabupaten Sidoarjo
                 </RouterLink>
               </p>
@@ -301,7 +301,7 @@ export default function NavbarCustom() {
             </DropdownItem>
             <DropdownItem className="font-bold" key="sobat">
               <p className="font-semibold text-[14px] font-inter">
-                <RouterLink to="/" className={getMenuClasses("Berita")}>
+                <RouterLink to="/zi-rb" className={getMenuClasses("Berita")}>
                   BPS Kabupaten Sidoarjo
                 </RouterLink>
               </p>

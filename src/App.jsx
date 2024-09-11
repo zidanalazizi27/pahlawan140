@@ -14,6 +14,7 @@ import Konfirmasi from "./pages/konfirmasimagang";
 import RuangBaca from "./pages/ruangbaca";
 import TemanLuki from "./pages/temanluki";
 import Aduan from "./pages/aduan";
+import ZIRB from "./pages/zi-rb";
 import Login from "./pages/login";
 import DashboardAdmin from "./pages/admin/dashboard";
 import MenuAdmin from "./pages/admin/menu";
@@ -83,6 +84,15 @@ function App() {
             element={
               <>
                 <Aduan />
+                <BackToTop />
+              </>
+            }
+          />
+          <Route
+            path="/zi-rb"
+            element={
+              <>
+                <ZIRB />
                 <BackToTop />
               </>
             }
