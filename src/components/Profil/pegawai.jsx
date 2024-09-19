@@ -1,41 +1,93 @@
 import React from "react";
-import { Card, CardBody, CardFooter, Image } from "@nextui-org/react";
+import { Card, CardBody, Image } from "@nextui-org/react";
 
 export default function Pegawai() {
   const list = [
     {
-      title: "Kepala BPS Kabupaten Sidoarjo",
-      img: "/image/pegawai/KepalaBPS.png",
-      price: "Mohamad Isma'il S.Si, M.Ec.Dev",
+      img: "/image/Pegawai/ksg.png"
     },
+    {
+      img: "/image/Pegawai/Ismail.png",
+      title: "Ismail"
+    },
+    {
+      img: "/image/Pegawai/Yayuk.png",
+      title: "Yayuk"
+    },
+    {
+      img: "/image/Pegawai/ksg.png"
+    },
+    {
+      img: "/image/Pegawai/Anggie.png",
+      title: "Anggie"
+    },
+    {
+      img: "/image/Pegawai/Chandra.png",
+      title: "Chandra"
+    },
+    {
+      img: "/image/Pegawai/Eka.png",
+      title: "Eka"
+    },
+    {
+      img: "/image/Pegawai/Febri.png",
+      title: "Febri"
+    },
+    {
+      img: "/image/Pegawai/Indra.png",
+      title: "Indra"
+    },
+    {
+      img: "/image/Pegawai/Kristin.png",
+      title: "Kristin"
+    },
+    {
+      img: "/image/Pegawai/Lukmi.png",
+      title: "Lukmi"
+    },
+    {
+      img: "/image/Pegawai/Maserul.png",
+      title: "Maserul"
+    },
+    {
+      img: "/image/Pegawai/Mutia.png",
+      title: "Mutia"
+    },
+    {
+      img: "/image/Pegawai/Neli.png",
+      title: "Neli"
+    },
+    {
+      img: "/image/Pegawai/Uus.png",
+      title: "Uus"
+    },
+    {
+      img: "/image/Pegawai/Yuli.png",
+      title: "Yuli"
+    }
   ];
 
   return (
-    <div className="gap-2 grid grid-cols-2 sm:grid-cols-4">
+    <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
       {list.map((item, index) => (
         <Card
-          shadow="sm"
           key={index}
-          isPressable
-          onPress={() => console.log("item pressed")}
+          className="mx-auto"
+          css={{
+            width: '100%',      
+            height: 'auto',      
+            aspectRatio: '1/1'  
+          }}
         >
-          <CardBody className="overflow-visible p-0">
+          <CardBody className="p-0">
             <Image
-              shadow="sm"
               radius="lg"
-              height="100%"
-              alt={item.title}
-              className="w-full object-cover h-[140px]"
+              objectFit="cover"
+              alt={item.title || 'Image without title'}
+              className="w-full h-full object-cover"
               src={item.img}
             />
           </CardBody>
-          <CardFooter className="text-small justify-between text-center">
-            <p className="mx-auto">
-              <b>{item.title}</b>
-              <br />
-              <span className="text-default-500">{item.price}</span>
-            </p>
-          </CardFooter>
         </Card>
       ))}
     </div>

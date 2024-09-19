@@ -34,21 +34,37 @@ const Sidebar = ({ children }) => {
 
   return (
     <div className="relative">
-      <aside className={`h-screen z-40 fixed top-0 left-0 p-4 ${isSidebarOpen ? "w-64" : "w-24"} transition-all duration-300`}>
+      <aside
+        className={`h-screen z-40 fixed top-0 left-0 p-4 ${
+          isSidebarOpen ? "w-64" : "w-24"
+        } transition-all duration-300`}
+      >
         <nav className="flex flex-col bg-white border-r bg-white rounded-2xl shadow-sm transition-all duration-300 h-full">
           <div className="p-4 pb-2 flex justify-between items-center">
-            <img
-              src="/image/logo.png"
-              className={`overflow-hidden transition-all duration-300 ${isSidebarOpen ? "w-24" : "w-0"}`}
-              alt=""
-            />
-            <p className={`font-semibold tracking-tight ml-3 text-primaryBlue ${isSidebarOpen ? "" : "hidden"}`}>
-              BPS Kabupaten Sidoarjo
-            </p>
+            <a href="/">
+              <img
+                src="/image/logo.png"
+                className={`overflow-hidden transition-all duration-300 ${
+                  isSidebarOpen ? "w-24" : "w-0"
+                }`}
+                alt=""
+              />
+            </a>
+            <a href="/">
+              <p
+                className={`font-semibold tracking-tight ml-3 text-primaryBlue ${
+                  isSidebarOpen ? "" : "hidden"
+                }`}
+              >
+                BPS Kabupaten Sidoarjo
+              </p>
+            </a>
 
             <button
               onClick={toggleSidebar}
-              className={`p-1.5 rounded-lg bg-gray-50 hover:bg-gray-100 ${isScreenWide ? "md:hidden" : ""}`}
+              className={`p-1.5 rounded-lg bg-gray-50 hover:bg-gray-100 ${
+                isScreenWide ? "md:hidden" : ""
+              }`}
             >
               {isSidebarOpen ? (
                 <ChevronLeft className="text-primaryBlue" />
@@ -78,8 +94,7 @@ const Sidebar = ({ children }) => {
               className={`flex justify-between items-center overflow-hidden transition-all duration-300 ${
                 isSidebarOpen ? "w-52 ml-3" : "w-0"
               }`}
-            >
-            </div>
+            ></div>
           </div>
         </nav>
       </aside>
@@ -100,7 +115,9 @@ export function SidebarItem({
 }) {
   const location = useLocation();
   const navigate = useNavigate();
-  const isActive = location.pathname === to || (submenu && submenu.some(subItem => subItem.to === location.pathname));
+  const isActive =
+    location.pathname === to ||
+    (submenu && submenu.some((subItem) => subItem.to === location.pathname));
   const hasSubmenu = submenu && submenu.length > 0;
   const [submenuOpen, setSubmenuOpen] = useState(() => {
     return localStorage.getItem(to) === "true";
@@ -122,7 +139,7 @@ export function SidebarItem({
 
   const handleSubmenuToggle = (e) => {
     e.stopPropagation();
-    setSubmenuOpen(prevState => !prevState);
+    setSubmenuOpen((prevState) => !prevState);
     if (!isSidebarOpen) {
       setIsSidebarOpen(true); // Open the sidebar if it's closed
     }
@@ -132,6 +149,8 @@ export function SidebarItem({
     if (hasSubmenu) {
       e.preventDefault();
       handleSubmenuToggle(e);
+    } else if (to.startsWith("http")) {
+      window.location.href = to; // Directly navigate to the external URL
     } else {
       navigate(to);
     }
@@ -139,7 +158,7 @@ export function SidebarItem({
 
   return (
     <>
-    {to === '/' ? (
+      {to === "/" ? (
         <li
           onClick={handleLogoutClick}
           className={`
@@ -151,69 +170,83 @@ export function SidebarItem({
           `}
         >
           {icon}
-          <span className={`overflow-hidden transition-all duration-300 ${isSidebarOpen ? "ml-3" : "ml-1.5"}`}>
+          <span
+            className={`overflow-hidden transition-all duration-300 ${
+              isSidebarOpen ? "ml-3" : "ml-1.5"
+            }`}
+          >
             {text}
           </span>
         </li>
-      ): (
-
-   
-    <div onClick={handleNavigation}>
-      <li
-        className={`
+      ) : (
+        <div onClick={handleNavigation}>
+          <li
+            className={`
           relative flex items-center py-2 px-3 my-2
           font-medium rounded-md cursor-pointer
           transition-colors group
-          ${isActive ? "bg-secondaryBlue text-primaryBlue" : "hover:bg-secondaryBlue text-ternaryBlue"}
+          ${
+            isActive
+              ? "bg-secondaryBlue text-primaryBlue"
+              : "hover:bg-secondaryBlue text-ternaryBlue"
+          }
           ${isSidebarOpen ? "ml-3" : "ml-0"}
         `}
-      >
-        {icon}
-        <span className={`overflow-hidden transition-all duration-300 ${isSidebarOpen ? "ml-3" : "-ml-1"}`}>
-          {text}
-        </span>
-        {hasSubmenu && (
-          <button
-            className="ml-auto focus:outline-none"
-            onClick={handleSubmenuToggle}
           >
-            {submenuOpen ? (
-              <ExpandLess className="text-primaryBlue" />
-            ) : (
-              <ExpandMore className="text-primaryBlue" />
+            {icon}
+            <span
+              className={`overflow-hidden transition-all duration-300 ${
+                isSidebarOpen ? "ml-3" : "-ml-1"
+              }`}
+            >
+              {text}
+            </span>
+            {hasSubmenu && (
+              <button
+                className="ml-auto focus:outline-none"
+                onClick={handleSubmenuToggle}
+              >
+                {submenuOpen ? (
+                  <ExpandLess className="text-primaryBlue" />
+                ) : (
+                  <ExpandMore className="text-primaryBlue" />
+                )}
+              </button>
             )}
-          </button>
-        )}
-        {alert && (
-          <div
-            className={`absolute right-2 w-2 h-2 rounded bg-indigo-400 ${
-              isSidebarOpen ? "" : "top-2"
-            }`}
-          />
-        )}
-      </li>
+            {alert && (
+              <div
+                className={`absolute right-2 w-2 h-2 rounded bg-indigo-400 ${
+                  isSidebarOpen ? "" : "top-2"
+                }`}
+              />
+            )}
+          </li>
 
-      {hasSubmenu && submenuOpen && isSidebarOpen && (
-        <ul className="ml-5">
-          {submenu.map((subItem, index) => (
-            <Link key={index} to={subItem.to}>
-              <li
-                className={`
+          {hasSubmenu && submenuOpen && isSidebarOpen && (
+            <ul className="ml-5">
+              {submenu.map((subItem, index) => (
+                <Link key={index} to={subItem.to}>
+                  <li
+                    className={`
                   relative flex items-center py-2 px-3 my-1
                   font-medium rounded-md cursor-pointer
                   transition-colors group
-                  ${location.pathname === subItem.to ? "bg-secondaryBlue text-primaryBlue" : "hover:bg-secondaryBlue text-ternaryBlue"}
+                  ${
+                    location.pathname === subItem.to
+                      ? "bg-secondaryBlue text-primaryBlue"
+                      : "hover:bg-secondaryBlue text-ternaryBlue"
+                  }
                 `}
-              >
-                <span className="ml-6">{subItem.icon}</span>
-                <span className="ml-3">{subItem.text}</span>
-              </li>
-            </Link>
-          ))}
-        </ul>
+                  >
+                    <span className="ml-6">{subItem.icon}</span>
+                    <span className="ml-3">{subItem.text}</span>
+                  </li>
+                </Link>
+              ))}
+            </ul>
+          )}
+        </div>
       )}
-    </div>
-    )}
     </>
   );
 }

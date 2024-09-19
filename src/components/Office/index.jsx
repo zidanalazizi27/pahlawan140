@@ -10,10 +10,10 @@ export default function Office() {
       link: "https://sipecut.bps.go.id//",
     },
     {
-      title: "Simpeg",
+      title: "Simpel Saja",
       img: "/image/simpeg.png",
       desc: "Sistem Informasi Manajemen Kepegawaian. Database untuk memenuhi kebutuhan pengelolaan kepegawaian BPS Sidoarjo secara efektif dan efesien.",
-      link: "https://internal.bps.go.id/",
+      link: "https://s.bps.go.id/Simpelsaja3515",
     },
     {
       title: "KipApp",

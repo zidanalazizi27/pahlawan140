@@ -4,97 +4,70 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "tailwindcss/tailwind.css";
 
 const data = {
-  berita: [
+  youtube: [
     {
       id: 1,
-      title:
-        "Tindak Lanjut Pajak Statistik, BPS Sidoarjo dan Umsida Perpanjang Kerja Sama",
-      date: "13 Jul 2024",
-      imageUrl:
-        "https://umsida.ac.id/wp-content/uploads/2024/07/Umsida-dan-BPS-Sidoarjo-3-scaled.jpg",
+      title: "Video Profil IST Kabupaten Sidoarjo-Nofriana Florida Djami Raga",
+      imageUrl: "https://img.youtube.com/vi/Ujd9LP7wu4U/maxresdefault.jpg",
+      videoUrl: "https://www.youtube.com/embed/Ujd9LP7wu4U",
     },
     {
       id: 2,
-      title:
-        "Tindak Lanjut Pajak Statistik, BPS Sidoarjo dan Umsida Perpanjang Kerja Sama",
-      date: "13 Jul 2024",
-      imageUrl: "https://nextui.org/images/card-example-2.jpeg",
+      title: "Ngulik 2.0 (Full Version) - Life in Nigeria Through Data Lens",
+      imageUrl: "https://img.youtube.com/vi/ZL2pSOvmNDU/maxresdefault.jpg",
+      videoUrl: "https://www.youtube.com/embed/ZL2pSOvmNDU",
     },
     {
       id: 3,
-      title:
-        "Tindak Lanjut Pajak Statistik, BPS Sidoarjo dan Umsida Perpanjang Kerja Sama",
-      date: "13 Jul 2024",
-      imageUrl: "https://nextui.org/images/card-example-2.jpeg",
+      title: "GANTARI I Jatim Census Film Festival",
+      imageUrl: "https://img.youtube.com/vi/kBkx0i-Vyxk/maxresdefault.jpg",
+      videoUrl: "https://www.youtube.com/embed/kBkx0i-Vyxk",
     },
     {
       id: 4,
-      title:
-        "Tindak Lanjut Pajak Statistik, BPS Sidoarjo dan Umsida Perpanjang Kerja Sama",
-      date: "13 Jul 2024",
-      imageUrl: "https://nextui.org/images/card-example-2.jpeg",
+      title: "BPS Kabupaten Sidoarjo Menuju WBK 2021",
+      imageUrl: "https://img.youtube.com/vi/DsgWD5ocHjA/maxresdefault.jpg",
+      videoUrl: "https://www.youtube.com/embed/DsgWD5ocHjA",
     },
     {
       id: 5,
-      title:
-        "Tindak Lanjut Pajak Statistik, BPS Sidoarjo dan Umsida Perpanjang Kerja Sama",
-      date: "13 Jul 2024",
-      imageUrl: "https://nextui.org/images/card-example-2.jpeg",
+      title: "Zona Integritas BPS Kabupaten Sidoarjo",
+      imageUrl: "https://img.youtube.com/vi/tMABaoPfVsg/maxresdefault.jpg",
+      videoUrl: "https://www.youtube.com/embed/tMABaoPfVsg",
     },
     {
       id: 6,
-      title:
-        "Tindak Lanjut Pajak Statistik, BPS Sidoarjo dan Umsida Perpanjang Kerja Sama",
-      date: "13 Jul 2024",
-      imageUrl: "https://nextui.org/images/card-example-2.jpeg",
-    },
-    {
-      id: 7,
-      title:
-        "Tindak Lanjut Pajak Statistik, BPS Sidoarjo dan Umsida Perpanjang Kerja Sama",
-      date: "13 Jul 2024",
-      imageUrl: "https://nextui.org/images/card-example-2.jpeg",
-    },
-  ],
-  pengumuman: [
-    {
-      id: 1,
-      title: "Pengumuman 1",
-      date: "13 Jul 2024",
-      imageUrl: "https://nextui.org/images/card-example-2.jpeg",
-    },
-  ],
-  youtube: [
-    {
-      url: "https://youtu.be/ZL2pSOvmNDU",
+      title: "IST BPS Kabupaten Sidoarjo Tahun 2023",
+      imageUrl: "https://img.youtube.com/vi/aSiLH0cRy4A/maxresdefault.jpg",
+      videoUrl: "https://www.youtube.com/embed/aSiLH0cRy4A",
     },
   ],
 };
 
 const Berita = () => {
-  const [selectedCategory, setSelectedCategory] = useState("berita");
+  const [selectedCategory, setSelectedCategory] = useState("youtube");
+  const [selectedVideo, setSelectedVideo] = useState(null);
+
+  const handleVideoClick = (videoUrl) => {
+    setSelectedVideo(videoUrl);
+  };
 
   const renderItems = () => {
     return data[selectedCategory].map((item) => (
-      <div key={item.id} className="relative w-full px-2 md:w-1/4">
-        <div className="relative w-full h-64 overflow-hidden rounded-lg">
+      <div key={item.id} className="relative w-full px-2 md:w-1/3">
+        <div
+          className="relative w-full h-72 overflow-hidden rounded-lg cursor-pointer"
+          onClick={() => handleVideoClick(item.videoUrl)}
+        >
           <img
             src={item.imageUrl}
             alt={item.title}
             className="object-cover w-full h-full"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-pdarkblue to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
         </div>
-        <div className="absolute text-left text-white bottom-5 left-5 right-5">
-          <p
-            className="mb-2 text-sm font-semibold"
-            style={{ margin: "0 2.5%" }}
-          >
-            {item.title}
-          </p>
-          <p className="text-xs" style={{ margin: "0 2.5%" }}>
-            {item.date}
-          </p>
+        <div className="absolute bottom-5 left-5 right-5 text-left text-white">
+          <p className="mb-2 text-sm font-semibold">{item.title}</p>
         </div>
       </div>
     ));
@@ -111,26 +84,6 @@ const Berita = () => {
       </p>
       <div className="flex justify-start gap-4 mb-5 text-sm font-semibold">
         <button
-          onClick={() => setSelectedCategory("berita")}
-          className={`text-[14px] px-4 py-2 rounded-full border ${
-            selectedCategory === "berita"
-              ? "bg-pdarkblue text-white"
-              : "bg-white text-pdarkblue border-pdarkblue"
-          }`}
-        >
-          Berita
-        </button>
-        <button
-          onClick={() => setSelectedCategory("pengumuman")}
-          className={`text-[14px] px-4 py-2 rounded-full border ${
-            selectedCategory === "pengumuman"
-              ? "bg-pdarkblue text-white"
-              : "bg-white text-pdarkblue border-pdarkblue"
-          }`}
-        >
-          Pengumuman
-        </button>
-        <button
           onClick={() => setSelectedCategory("youtube")}
           className={`text-[14px] px-4 py-2 rounded-full border ${
             selectedCategory === "youtube"
@@ -139,6 +92,18 @@ const Berita = () => {
           }`}
         >
           YouTube
+        </button>
+        <button
+          onClick={() =>
+            window.open("https://sidoarjokab.bps.go.id/id/news", "_blank")
+          }
+          className={`text-[14px] px-4 py-2 rounded-full border ${
+            selectedCategory === "berita"
+              ? "bg-pdarkblue text-white"
+              : "bg-white text-pdarkblue border-pdarkblue"
+          }`}
+        >
+          Berita
         </button>
       </div>
       <Carousel
@@ -149,38 +114,57 @@ const Berita = () => {
         selectedItem={0}
         className="carousel"
       >
-        {data[selectedCategory]
-          .slice(0, Math.ceil(data[selectedCategory].length / 4))
-          .map((_, index) => (
-            <div className="flex" key={index}>
-              {data[selectedCategory]
-                .slice(index * 4, (index + 1) * 4)
-                .map((item) => (
-                  <div key={item.id} className="relative w-full px-2 md:w-1/4">
-                    <div className="relative w-full h-64 overflow-hidden rounded-lg">
-                      <img
-                        src={item.imageUrl}
-                        alt={item.title}
-                        className="object-cover w-full h-full"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-pdarkblue to-transparent"></div>
-                    </div>
-                    <div className="absolute text-left text-white bottom-5 left-5 right-5">
-                      <p
-                        className="mb-2 text-[12px] font-semibold"
-                        style={{ margin: "0 2.5%" }}
-                      >
-                        {item.title}
-                      </p>
-                      <p className="text-[10px]" style={{ margin: "0 2.5%" }}>
-                        {item.date}
-                      </p>
-                    </div>
+        {Array.from({
+          length: Math.ceil(data[selectedCategory].length / 3),
+        }).map((_, index) => (
+          <div className="flex" key={index}>
+            {data[selectedCategory]
+              .slice(index * 3, (index + 1) * 3)
+              .map((item) => (
+                <div key={item.id} className="relative w-full px-2 md:w-1/3">
+                  <div
+                    className="relative w-full h-72 overflow-hidden rounded-lg cursor-pointer"
+                    onClick={() => handleVideoClick(item.videoUrl)}
+                  >
+                    <img
+                      src={item.imageUrl}
+                      alt={item.title}
+                      className="object-cover w-full h-full"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
                   </div>
-                ))}
-            </div>
-          ))}
+                  <div className="absolute bottom-5 left-5 right-5 text-left text-white">
+                    <p className="mb-2 text-sm font-semibold">{item.title}</p>
+                  </div>
+                </div>
+              ))}
+          </div>
+        ))}
       </Carousel>
+
+      {selectedVideo && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center"
+          onClick={() => setSelectedVideo(null)}
+        >
+          <div className="relative w-full max-w-2xl mx-auto rounded-lg overflow-hidden">
+            <iframe
+              src={selectedVideo}
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+              className="w-full h-96"
+            ></iframe>
+            <button
+              onClick={() => setSelectedVideo(null)}
+              className="absolute top-2 right-2 text-black bg-white rounded-full p-2"
+            >
+              x
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

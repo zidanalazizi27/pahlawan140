@@ -24,8 +24,8 @@ export default function Office2() {
     {
       title: "FRA",
       img: "/image/fra.png",
-      desc: "Fraud Risk Assessment merupakan upaya organisasi untuk menerapkan sistem mitigasi risiko terjadinya kerentanan dan penyalahgunaan wewenang.",
-      link: "https://www.majapah.it/",
+      desc: "Form Rencana Aksi merupakan sebuah dokumen yang menjadi inti pelaksanaan praktik keterbukaan di lingkungan BPS Kabupaten Sidoarjo.",
+      link: "https://forms.gle/4XZ1j1JL8m4tHJNHA",
     },
   ];
 

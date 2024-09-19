@@ -60,49 +60,263 @@ const getBase64 = (file) =>
   });
 
 function BerandaAdmin() {
-  const [previewOpen, setPreviewOpen] = useState(false);
-  const [previewImage, setPreviewImage] = useState("");
-  const [fileList, setFileList] = useState([
+  //Profil Pejabat
+  const [previewOpenPP, setPreviewOpenPP] = useState(false);
+  const [previewImagePP, setPreviewImagePP] = useState("");
+  const [fileListPP, setFileListPP] = useState([
     {
       uid: "-1",
       name: "image.png",
       status: "done",
-      url: "https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png",
+      url: "image/Pegawai/Anggie.png",
     },
     {
       uid: "-2",
       name: "image.png",
       status: "done",
-      url: "https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png",
+      url: "image/Pegawai/Chandra.png",
     },
     {
       uid: "-3",
       name: "image.png",
       status: "done",
-      url: "https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png",
+      url: "image/Pegawai/Eka.png",
     },
     {
       uid: "-4",
       name: "image.png",
       status: "done",
-      url: "https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png",
-    },
-    {
-      uid: "-xxx",
-      name: "image.png",
-      status: "uploading",
-      url: "https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png",
+      url: "image/Pegawai/Febri.png",
     },
     {
       uid: "-5",
       name: "image.png",
-      status: "error",
+      status: "done",
+      url: "image/Pegawai/Indra.png",
+    },
+    {
+      uid: "-6",
+      name: "image.png",
+      status: "done",
+      url: "image/Pegawai/Ismail.png",
+    },
+    {
+      uid: "-7",
+      name: "image.png",
+      status: "done",
+      url: "image/Pegawai/Kristin.png",
+    },
+    {
+      uid: "-8",
+      name: "image.png",
+      status: "done",
+      url: "image/Pegawai/Lukmi.png",
+    },
+    {
+      uid: "-9",
+      name: "image.png",
+      status: "done",
+      url: "image/Pegawai/Maserul.png",
+    },
+    {
+      uid: "-10",
+      name: "image.png",
+      status: "done",
+      url: "image/Pegawai/Mutia.png",
+    },
+    {
+      uid: "-11",
+      name: "image.png",
+      status: "done",
+      url: "image/Pegawai/Neli.png",
+    },
+    {
+      uid: "-12",
+      name: "image.png",
+      status: "done",
+      url: "image/Pegawai/Uus.png",
+    },
+    {
+      uid: "-13",
+      name: "image.png",
+      status: "done",
+      url: "image/Pegawai/Yayuk.png",
+    },
+    {
+      uid: "-14",
+      name: "image.png",
+      status: "done",
+      url: "image/Pegawai/Yuli.png",
+    },
+    {
+      uid: "-15",
+      name: "image.png",
+      status: "done",
+      url: "image/Pegawai/Neli.png",
     },
   ]);
+  
+  const handleChangePP = ({ fileListPP: newFileListPP }) => setFileListPP(newFileListPP);
+  const uploadButtonPP = (
+    <AntButton
+      style={{
+        border: 0,
+        background: "none",
+      }}
+      type="button"
+    >
+      <PlusOutlined />
+      <div
+        style={{
+          marginTop: 8,
+        }}
+      >
+        Upload
+      </div>
+    </AntButton>
+  );
 
-  // const [modalAction, setModalAction] = useState(null); // To store the action type ('edit' or 'view')
-  // const [selectedItem, setSelectedItem] = useState(null); // To store the item selected for editing or viewing
-  // const { isOpen, onOpen, onOpenChange } = useDisclosure();
+  const handlePreviewPP = async (file) => {
+    if (!file.url && !file.preview) {
+      file.preview = await getBase64(file.originFileObj);
+    }
+    setPreviewImagePP(file.url || file.preview);
+    setPreviewOpenPP(true);
+  };
+
+  //Carousel
+  const [previewOpenCar, setPreviewOpenCar] = useState(false);
+  const [previewImageCar, setPreviewImageCar] = useState("");
+  const [fileListCar, setFileListCar] = useState([
+    {
+      uid: "-1",
+      name: "image.png",
+      status: "done",
+      url: "image/Carousel/C1.svg",
+    },
+    {
+      uid: "-2",
+      name: "image.png",
+      status: "done",
+      url: "image/Carousel/C2.svg",
+    },
+    {
+      uid: "-3",
+      name: "image.png",
+      status: "done",
+      url: "image/Carousel/C3.svg",
+    },
+    {
+      uid: "-4",
+      name: "image.png",
+      status: "done",
+      url: "image/Carousel/C4.svg",
+    },
+    {
+      uid: '-xxx',
+      percent: 50,
+      name: 'image.png',
+      status: 'uploading',
+      url: 'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png',
+    },
+    {
+      uid: '-5',
+      name: 'image.png',
+      status: 'error',
+    },
+  ]);
+  
+  const handleChangeCar = ({ fileListCar: newFileListCar }) => setFileListCar(newFileListCar);
+  const uploadButtonCar = (
+    <AntButton
+      style={{
+        border: 0,
+        background: "none",
+      }}
+      type="button"
+    >
+      <PlusOutlined />
+      <div
+        style={{
+          marginTop: 8,
+        }}
+      >
+        Upload
+      </div>
+    </AntButton>
+  );
+
+  const handlePreviewCar = async (file) => {
+    if (!file.url && !file.preview) {
+      file.preview = await getBase64(file.originFileObj);
+    }
+    setPreviewImageCar(file.url || file.preview);
+    setPreviewOpenCar(true);
+  };
+
+  //Penghargaan Kami
+  const [previewOpenCert, setPreviewOpenCert] = useState(false);
+  const [previewImageCert, setPreviewImageCert] = useState("");
+  const [fileListCert, setFileListCert] = useState([
+    {
+      uid: "-1",
+      name: "image.png",
+      status: "done",
+      url: "image/Sertifikat/1.jpg",
+    },
+    {
+      uid: "-2",
+      name: "image.png",
+      status: "done",
+      url: "image/Sertifikat/2.jpg",
+    },
+    {
+      uid: "-3",
+      name: "image.png",
+      status: "done",
+      url: "image/Sertifikat/3.jpg",
+    },
+    {
+      uid: "-4",
+      name: "image.png",
+      status: "done",
+      url: "image/Sertifikat/4.jpg",
+    },
+    {
+      uid: "-5",
+      name: "image.png",
+      status: "done",
+      url: "image/Sertifikat/5.jpg",
+    },
+  ]);
+  
+  const handleChangeCert = ({ fileListCert: newFileListCert }) => setFileListCert(newFileListCert);
+  const uploadButtonCert = (
+    <AntButton
+      style={{
+        border: 0,
+        background: "none",
+      }}
+      type="button"
+    >
+      <PlusOutlined />
+      <div
+        style={{
+          marginTop: 8,
+        }}
+      >
+        Upload
+      </div>
+    </AntButton>
+  ); 
+
+  const handlePreviewCert = async (file) => {
+    if (!file.url && !file.preview) {
+      file.preview = await getBase64(file.originFileObj);
+    }
+    setPreviewImageCert(file.url || file.preview);
+    setPreviewOpenCert(true);
+  };
 
   // Separate state for Layanan Kami modal
   const [modalActionLyn, setModalActionLyn] = useState(null);
@@ -124,40 +338,6 @@ function BerandaAdmin() {
     onOpenChange: onOpenChangeApp,
   } = useDisclosure();
 
-  const handlePreview = async (file) => {
-    if (!file.url && !file.preview) {
-      file.preview = await getBase64(file.originFileObj);
-    }
-    setPreviewImage(file.url || file.preview);
-    setPreviewOpen(true);
-  };
-
-  const handleChange = ({ fileList: newFileList }) => setFileList(newFileList);
-
-  const uploadButton = (
-    <AntButton
-      style={{
-        border: 0,
-        background: "none",
-      }}
-      type="button"
-    >
-      <PlusOutlined />
-      <div
-        style={{
-          marginTop: 8,
-        }}
-      >
-        Upload
-      </div>
-    </AntButton>
-  );
-
-  // const openModal = (action, item) => {
-  //   setModalAction(action);
-  //   setSelectedItem(item);
-  //   onOpen();
-  // };
 
   // Open modal for Layanan Kami
   const openModalLyn = (action, item) => {
@@ -270,23 +450,23 @@ function BerandaAdmin() {
             <Upload
               action="https://660d2bd96ddfa2943b33731c.mockapi.io/api/upload"
               listType="picture-card"
-              fileList={fileList}
-              onPreview={handlePreview}
-              onChange={handleChange}
+              fileList={fileListPP}
+              onPreview={handlePreviewPP}
+              onChange={handleChangePP}
             >
-              {fileList.length >= 8 ? null : uploadButton}
+              {fileListPP.length >= 20 ? null : uploadButtonPP}
             </Upload>
-            {previewImage && (
+            {previewImagePP && (
               <Image
                 wrapperStyle={{
                   display: "none",
                 }}
                 preview={{
-                  visible: previewOpen,
-                  onVisibleChange: (visible) => setPreviewOpen(visible),
-                  afterOpenChange: (visible) => !visible && setPreviewImage(""),
+                  visible: previewOpenPP,
+                  onVisibleChange: (visible) => setPreviewOpenPP(visible),
+                  afterOpenChange: (visible) => !visible && setPreviewImagePP(""),
                 }}
-                src={previewImage}
+                src={previewImagePP}
               />
             )}
           </div>
@@ -299,23 +479,23 @@ function BerandaAdmin() {
             <Upload
               action="https://660d2bd96ddfa2943b33731c.mockapi.io/api/upload"
               listType="picture-card"
-              fileList={fileList}
-              onPreview={handlePreview}
-              onChange={handleChange}
+              fileList={fileListCar}
+              onPreview={handlePreviewCar}
+              onChange={handleChangeCar}
             >
-              {fileList.length >= 8 ? null : uploadButton}
+              {fileListCar.length >= 8 ? null : uploadButtonCar}
             </Upload>
-            {previewImage && (
+            {previewImageCar && (
               <Image
                 wrapperStyle={{
                   display: "none",
                 }}
                 preview={{
-                  visible: previewOpen,
-                  onVisibleChange: (visible) => setPreviewOpen(visible),
-                  afterOpenChange: (visible) => !visible && setPreviewImage(""),
+                  visible: previewOpenCar,
+                  onVisibleChange: (visible) => setPreviewOpenCar(visible),
+                  afterOpenChange: (visible) => !visible && setPreviewImageCar(""),
                 }}
-                src={previewImage}
+                src={previewImageCar}
               />
             )}
           </div>
@@ -556,23 +736,23 @@ function BerandaAdmin() {
             <Upload
               action="https://660d2bd96ddfa2943b33731c.mockapi.io/api/upload"
               listType="picture-card"
-              fileList={fileList}
-              onPreview={handlePreview}
-              onChange={handleChange}
+              fileList={fileListCert}
+              onPreview={handlePreviewCert}
+              onChange={handleChangeCert}
             >
-              {fileList.length >= 8 ? null : uploadButton}
+              {fileListCert.length >= 10 ? null : uploadButtonCert}
             </Upload>
-            {previewImage && (
+            {previewImageCert && (
               <Image
                 wrapperStyle={{
                   display: "none",
                 }}
                 preview={{
-                  visible: previewOpen,
-                  onVisibleChange: (visible) => setPreviewOpen(visible),
-                  afterOpenChange: (visible) => !visible && setPreviewImage(""),
+                  visible: previewOpenCert,
+                  onVisibleChange: (visible) => setPreviewOpenCert(visible),
+                  afterOpenChange: (visible) => !visible && setPreviewImageCert(""),
                 }}
-                src={previewImage}
+                src={previewImageCert}
               />
             )}
           </div>
