@@ -13,19 +13,19 @@ export default function Office2() {
       title: "BAST",
       img: "/image/bast.png",
       desc: "Berita Acara Serah Terima. Dokumen dasar hukum proses serah terima barang atau jasa di lingkungan BPS.",
-      link: "https://internal.bps.go.id/",
+      link: "https://forms.gle/qBhJNuGoLtrtc3HU8",
     },
     {
       title: "Surat Tugas",
       img: "/image/st.png",
       desc: "naskah dinas yang dibuat oleh atasan atau pejabat yang berwenang kepada bawahan atau pejabat lain yang diberi tugas.",
-      link: "https://webapps.bps.go.id/kipapp/#/auth/login",
+      link: "https://forms.gle/mdn54nSXPEhZ6er1A",
     },
     {
       title: "Surat Pengantar",
       img: "/image/sp.png",
       desc: "Surat resmi instansi BPS untuk memberikan informasi penting kepada pihak tertentu.",
-      link: "https://www.majapah.it/",
+      link: "https://forms.gle/teUN7PYRzg4REiBx6",
     },
   ];
 

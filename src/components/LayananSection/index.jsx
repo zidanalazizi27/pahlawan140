@@ -50,7 +50,7 @@ const LayananSection = () => {
       title: "Desa Cantik",
       description:
         "Program percepatan dari Badan Pusat Statistik dalam lingkup wilayah Desa/Kelurahan/Nagari/Wilayah setingkatnya untuk meningkatkan kompetensi aparatur Desa dalam mengelola dan memanfaatkan data Desa sehingga Perencanaan Pembangunan Desa menjadi lebih tepat sasaran.",
-      link: "https://desa-cantik-sda.vercel.app",
+      link: "https://desacantik.pahlawan140.com/",
     },
     {
       bgColor: "#EB891B",
@@ -68,7 +68,7 @@ const LayananSection = () => {
       title: "Cari Data",
       description:
         " Layanan BPS yang memungkinkan pengguna untuk mengajukan permintaan data statistik melalui formulir online, memfasilitasi akses cepat dan tepat terhadap informasi terbaru.",
-      link: "https://sidoarjokab.bps.go.id/pencarian.html?",
+      link: "https://sidoarjokab.bps.go.id/id/publication",
     },
   ];
 

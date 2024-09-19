@@ -59,16 +59,20 @@ export default function NavbarCustom() {
           className="sm:hidden"
         />
         <NavbarBrand>
-          <img
-            src="https://www.bps.go.id/_next/image?url=%2Fassets%2Flogo-bps.png&w=1080&q=75"
-            alt="BPS Logo"
-            width={48}
-            height={48}
-          />
-          <p className="font-[800] font-inter italic text-[14px] sm:text-[18px] text-pdarkblue ml-3 block xs:inline-block">
-            BPS KABUPATEN <br className="xs:hidden" />
-            SIDOARJO
-          </p>
+          <a href="/">
+            <img
+              src="https://www.bps.go.id/_next/image?url=%2Fassets%2Flogo-bps.png&w=1080&q=75"
+              alt="BPS Logo"
+              width={48}
+              height={48}
+            />
+          </a>
+          <a href="/">
+            <p className="font-[800] font-inter italic text-[14px] sm:text-[18px] text-pdarkblue ml-3 block xs:inline-block">
+              BPS KABUPATEN <br className="xs:hidden" />
+              SIDOARJO
+            </p>
+          </a>
         </NavbarBrand>
       </NavbarContent>
       <NavbarContent className="hidden gap-4 sm:flex" justify="end">
@@ -156,7 +160,7 @@ export default function NavbarCustom() {
             </DropdownItem>
             <DropdownItem className="font-bold" key="sobat">
               <p className="font-semibold text-[14px] font-inter">
-                <RouterLink to="/" className={getMenuClasses("Berita")}>
+                <RouterLink to="/zi-rb" className={getMenuClasses("Berita")}>
                   BPS Kabupaten Sidoarjo
                 </RouterLink>
               </p>
@@ -301,7 +305,7 @@ export default function NavbarCustom() {
             </DropdownItem>
             <DropdownItem className="font-bold" key="sobat">
               <p className="font-semibold text-[14px] font-inter">
-                <RouterLink to="/" className={getMenuClasses("Berita")}>
+                <RouterLink to="/zi-rb" className={getMenuClasses("Berita")}>
                   BPS Kabupaten Sidoarjo
                 </RouterLink>
               </p>

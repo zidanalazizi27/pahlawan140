@@ -358,7 +358,7 @@ const MyOff = () => {
         <div className="mt-5 flex flex-col md:flex-row bg-white rounded-2xl p-10 justify-between space-y-5 md:space-y-0">
           <div className="w-full flex justify-center items-center flex-col">
             <h2 className="text-lg font-semibold text-pdarkblue mb-4">
-              Pengaturan MyOffice
+              Menu MyOffice
             </h2>
 
             <NextUIButton

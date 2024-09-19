@@ -1,5 +1,16 @@
 import React from "react";
-import { Card, CardBody, CardFooter, Image, Button } from "@nextui-org/react";
+import {
+  Card,
+  CardBody,
+  CardFooter,
+  Image,
+  Button,
+  Dropdown,
+  DropdownTrigger,
+  DropdownMenu,
+  DropdownSection,
+  DropdownItem,
+} from "@nextui-org/react";
 
 const Aduan = () => {
   return (
@@ -74,25 +85,67 @@ const Aduan = () => {
       <h2 className="text-center header">Saluran pengaduan</h2>
 
       <div className="flex justify-center gap-8 mt-6">
-        <a
-          href="https://s.bps.go.id/simsusi"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="no-underline"
-        >
-          <Card isFooterBlurred radius="lg" className="border-none">
-            <Image
-              alt="Pengaduan"
-              className="object-cover"
-              height={200}
-              src="/image/Ad3.png"
-              width={150}
-            />
-            <CardFooter className="justify-center before:bg-white/10 border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_8px)] shadow-small ml-1 z-10">
-              <p className="text-tiny text-white/80">Pengaduan</p>
-            </CardFooter>
-          </Card>
-        </a>
+        <Card isFooterBlurred radius="lg" className="border-none">
+          <Image
+            alt="Pengaduan"
+            className="object-cover"
+            height={200}
+            src="/image/Ad3.png"
+            width={150}
+          />
+          <CardFooter className="justify-center before:bg-white/10 border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_8px)] h-fit shadow-small ml-1 z-10">
+            <Dropdown
+              placement="bottom"
+              className="min-w-[140px] font-inter text-pdarkblue"
+              itemClasses={{
+                base: "gap-4",
+              }}
+            >
+              <DropdownTrigger>
+                <Button
+                  radius="lg"
+                  color="#0B588F"
+                  className="rounded-xl w-full h-fit font-inter text-white/80 text-tiny"
+                >
+                  Aduan
+                </Button>
+              </DropdownTrigger>
+              <DropdownMenu
+                className="w-35 font-inter font-extralight"
+                aria-label="Static Actions"
+                variant="flat"
+              >
+                <DropdownItem
+                  as="a"
+                  href="http://s.bps.go.id/fedex"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  key="responden"
+                >
+                  Responden
+                </DropdownItem>
+                <DropdownItem
+                  as="a"
+                  href="http://s.bps.go.id/BPS3515_Pengaduan%20"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  key="masyarakat"
+                >
+                  Masyarakat
+                </DropdownItem>
+                <DropdownItem
+                  as="a"
+                  href="http://s.bps.go.id/GratifikasiBPS3515"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  key="mitra-statistik"
+                >
+                  Mitra Statistik
+                </DropdownItem>
+              </DropdownMenu>
+            </Dropdown>
+          </CardFooter>
+        </Card>
 
         <a
           href="https://webapps.bps.go.id/pengaduan/wbs/beranda"
@@ -110,26 +163,6 @@ const Aduan = () => {
             />
             <CardFooter className="justify-center before:bg-white/10 border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_8px)] shadow-small ml-1 z-10">
               <p className="text-tiny text-white/80">Whistle Blowing</p>
-            </CardFooter>
-          </Card>
-        </a>
-
-        <a
-          href="https://www.lapor.go.id/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="no-underline"
-        >
-          <Card isFooterBlurred radius="lg" className="border-none">
-            <Image
-              alt="Gratifikasi"
-              className="object-cover"
-              height={200}
-              src="/image/Ad1.png"
-              width={150}
-            />
-            <CardFooter className="justify-center before:bg-white/10 border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_8px)] shadow-small ml-1 z-10">
-              <p className="text-tiny text-white/80">Gratifikasi</p>
             </CardFooter>
           </Card>
         </a>

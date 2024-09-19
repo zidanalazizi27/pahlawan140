@@ -99,14 +99,14 @@ const data_am = [
   {
     id_am: 1,
     nama_am: "Rahadian Eka Pambayun",
-    pt_am: "UNAIR",
+    pt_am: "Universitas Trunojoyo Madura",
     prodi_am: "Statistika",
     status_am: "Diterima",
   },
   {
     id_am: 2,
     nama_am: "Ilzamuddin Armain",
-    pt_am: "UNAIR",
+    pt_am: "Universitas Arilangga",
     prodi_am: "Fisika",
     status_am: "Menunggu",
   },
@@ -230,13 +230,13 @@ const AyoMg = () => {
               Daftar Peserta Magang
             </h2>
 
-            <NextUIButton
+            {/* <NextUIButton
               size="sm"
               color="primary"
               onPress={() => openModalAM("add", null)} // Open modal to add new item
             >
               Tambah <PlusOutlined />
-            </NextUIButton>
+            </NextUIButton> */}
 
             <Modal
               size="3xl"

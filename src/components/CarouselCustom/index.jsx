@@ -22,16 +22,16 @@ const CarouselCustom = () => {
         className="overflow-hidden"
       >
         <div>
-          <img alt="C1" src="/image/C1.svg" style={imgStyle} />
+          <img alt="C1" src="/image/Carousel/C1.svg" style={imgStyle} />
         </div>
         <div>
-          <img alt="C2" src="/image/C2.svg" style={imgStyle} />
+          <img alt="C2" src="/image/Carousel/C2.svg" style={imgStyle} />
         </div>
         <div>
-          <img alt="C3" src="/image/C3.svg" style={imgStyle} />
+          <img alt="C3" src="/image/Carousel/C3.svg" style={imgStyle} />
         </div>
         <div>
-          <img alt="C4" src="/image/C4.svg" style={imgStyle} />
+          <img alt="C4" src="/image/Carousel/C4.svg" style={imgStyle} />
         </div>
       </Carousel>
     </>

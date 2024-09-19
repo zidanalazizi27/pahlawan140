@@ -1,17 +1,26 @@
-import React, { useEffect, useState } from 'react';
-import Sidebar, { SidebarItem } from '../../components/SidebarAdmin';
-import { Dashboard, Assignment, Key, Person, CardMembership, Close, Logout } from '@mui/icons-material';
-import DashboardRoundedIcon from '@mui/icons-material/DashboardRounded';
-import DnsRoundedIcon from '@mui/icons-material/DnsRounded';
-import Diversity3RoundedIcon from '@mui/icons-material/Diversity3Rounded';
-import WidgetsRoundedIcon from '@mui/icons-material/WidgetsRounded';
-import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
-import MonitorHeartRoundedIcon from '@mui/icons-material/MonitorHeartRounded';
-import MenuBookRoundedIcon from '@mui/icons-material/MenuBookRounded';
-import PrintRoundedIcon from '@mui/icons-material/PrintRounded';
-import { Link } from 'react-router-dom';
-import { AnimatePresence, motion } from 'framer-motion';
-import LogoutConfirmationModal from '../../components/Modal/LogoutModal';
+import React, { useEffect, useState } from "react";
+import Sidebar, { SidebarItem } from "../../components/SidebarAdmin";
+import {
+  Dashboard,
+  Assignment,
+  Key,
+  Person,
+  CardMembership,
+  Close,
+  Logout,
+} from "@mui/icons-material";
+import DashboardRoundedIcon from "@mui/icons-material/DashboardRounded";
+import DnsRoundedIcon from "@mui/icons-material/DnsRounded";
+import Diversity3RoundedIcon from "@mui/icons-material/Diversity3Rounded";
+import WidgetsRoundedIcon from "@mui/icons-material/WidgetsRounded";
+import HomeRoundedIcon from "@mui/icons-material/HomeRounded";
+import MonitorHeartRoundedIcon from "@mui/icons-material/MonitorHeartRounded";
+import MenuBookRoundedIcon from "@mui/icons-material/MenuBookRounded";
+import PrintRoundedIcon from "@mui/icons-material/PrintRounded";
+import ImportContactsRoundedIcon from "@mui/icons-material/ImportContactsRounded";
+import { Link } from "react-router-dom";
+import { AnimatePresence, motion } from "framer-motion";
+import LogoutConfirmationModal from "../../components/Modal/LogoutModal";
 
 function AdminLayout({ children }) {
   const data = [
@@ -25,50 +34,62 @@ function AdminLayout({ children }) {
       text: "Pahlawan140",
       to: "",
       submenu: [
-        { text: "Menu", to: "/menu", icon: <WidgetsRoundedIcon/>},
-        { text: "Beranda", to: "/beranda_adm",  icon: <HomeRoundedIcon />  },
-        { text: "Teman Luki", to: "/temanluki_adm",  icon: <MonitorHeartRoundedIcon />  },
-        { text: "Ruang Baca", to: "/ruangbaca_adm",  icon: <MenuBookRoundedIcon />  },
-        { text: "My Office", to: "/myoffice_adm",  icon: <PrintRoundedIcon />  }
-      ]
+        { text: "Menu", to: "/menu", icon: <WidgetsRoundedIcon /> },
+        { text: "Beranda", to: "/beranda_adm", icon: <HomeRoundedIcon /> },
+        {
+          text: "Teman Luki",
+          to: "/temanluki_adm",
+          icon: <MonitorHeartRoundedIcon />,
+        },
+        {
+          text: "Ruang Baca",
+          to: "/ruangbaca_adm",
+          icon: <MenuBookRoundedIcon />,
+        },
+        { text: "My Office", to: "/myoffice_adm", icon: <PrintRoundedIcon /> },
+      ],
     },
     {
       icon: <Diversity3RoundedIcon />,
       text: "Ayo Magang",
       to: "/ayomagang_adm",
-      submenu: []
+      submenu: [],
+    },
+    {
+      icon: <ImportContactsRoundedIcon />,
+      text: "Buku Panduan",
+      to: "https://docs.google.com/document/d/1UI4sp8sCPOT6fvJL6JsC9qzEaRQrQEh7cEE9I8ZVf78/edit?usp=sharing",
+      submenu: [],
     },
     {
       icon: <Logout />,
       text: "Keluar",
-      to: "/logout",
-      submenu: []
+      to: "https://pahlawan140.com/",
+      submenu: [],
     },
-
   ];
 
   const [toast, setToast] = useState(false);
   // const [showLogoutModal, setShowLogoutModal] = useState(false);
-  
-  // const handleLogout = () => {
-  //   // Clear specific items from local storage
-  //   localStorage.removeItem('loginSuccess');
-  //   localStorage.removeItem('email');
-  
-  //   // Redirect to the home page or any desired location
-  //   window.location.href = '/';
-  // };
-  
+
+  const handleLogout = () => {
+    // Clear specific items from local storage
+    // localStorage.removeItem('loginSuccess');
+    // localStorage.removeItem('email');
+
+    // Redirect to the home page or any desired location
+    window.location.href = '/';
+  };
 
   // useEffect(() => {
   //   const loginSuccess = localStorage.getItem('loginSuccess');
   //   if (loginSuccess) {
-     
+
   //     setToast(true);
-     
+
   //     localStorage.removeItem('loginSuccess');
   //   }
-  // }, 
+  // },
   // []);
 
   return (
@@ -89,17 +110,13 @@ function AdminLayout({ children }) {
         </Sidebar>
       </div>
 
-    
-      <div className="flex-1 ml-[16.6667%] w-5/6 overflow-auto">
-        {children}
-      </div>
+      <div className="flex-1 ml-[16.6667%] w-5/6 overflow-auto">{children}</div>
 
       {/* <LogoutConfirmationModal
         isOpen={showLogoutModal}
         onClose={() => setShowLogoutModal(false)}
         onConfirm={handleLogout}
       /> */}
-
 
       <AnimatePresence>
         {toast && (
@@ -109,9 +126,19 @@ function AdminLayout({ children }) {
             exit={{ opacity: 0, y: -20 }}
             className="absolute bottom-5 right-5"
           >
-            <div id="toast-success" className="flex items-center w-full max-w-xs p-4 mb-4 text-gray-500 bg-white rounded-lg shadow border-2 border-gray-200" role="alert">
+            <div
+              id="toast-success"
+              className="flex items-center w-full max-w-xs p-4 mb-4 text-gray-500 bg-white rounded-lg shadow border-2 border-gray-200"
+              role="alert"
+            >
               <div className="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 text-green-500 bg-green-100 rounded-lg dark:bg-green-800 dark:text-green-200">
-                <svg className="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                <svg
+                  className="w-5 h-5"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
                   <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
                 </svg>
                 <span className="sr-only">Check icon</span>
@@ -130,7 +157,6 @@ function AdminLayout({ children }) {
           </motion.div>
         )}
       </AnimatePresence>
-
     </div>
   );
 }
