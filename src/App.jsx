@@ -27,7 +27,6 @@ import { NextUIProvider } from "@nextui-org/react";
 import PrivateRoute from "./components/PrivateRoute";
 import RoleBasedRoute from "./components/RoleBasedRoute";
 
-
 function App() {
   const navigate = useNavigate();
 
@@ -41,13 +40,6 @@ function App() {
             element={
               <PrivateRoute>
                 <MyOffice />
-                <DashboardAdmin />
-                <MenuAdmin />
-                <BerandaAdmin />
-                <TemanLukiAdmin />
-                <RuangBacaAdmin />
-                <MyOfficeAdmin />
-                <AyoMagangAdmin />
               </PrivateRoute>
             }
           />
